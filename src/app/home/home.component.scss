@@ -146,3 +146,98 @@
     }
   }
 }
+
+.why-az {
+  background-color: #f8f9fa;    // fallback if gradient doesn’t show
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 4rem 0;
+  min-height: 400px;            // ensure it doesn’t collapse
+  position: relative;
+
+  // Decorative wave at top/bottom
+  .wave {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background: url('/assets/images/wave.svg') no-repeat center top;
+    &--bottom {
+      top: auto;
+      bottom: 0;
+      transform: rotate(180deg);
+    }
+    &--top {
+      top: 0;
+    }
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .section-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-subtitle {
+    color: #555;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .feat-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .card-media {
+      height: 140px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    mat-card-header {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+
+      mat-icon {
+        font-size: 1.8rem;
+        color: #ffc451;
+        margin-right: 0.5rem;
+      }
+
+      mat-card-title {
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+    }
+
+    mat-card-content {
+      padding: 0 1rem 1rem;
+
+      p {
+        color: #666;
+        margin: 0;
+        line-height: 1.4;
+      }
+    }
+  }
+}

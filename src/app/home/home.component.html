@@ -15,33 +15,40 @@
   </div>
 </div>
 
-<!-- 2) “De ce AZfacility?” -->
-<section class="why-az py-5">
-  <div class="container">
-    <h2 class="section-title text-center mb-4">De ce AZfacility?</h2>
-    <div class="row gy-3">
-      <div class="col-12 col-md-6">
-        <p><i class="fa-solid fa-seedling me-2 text-warning"></i>
-            Management complet al proprietății tale, de la A la Z
-        </p>
-      </div>
-      <div class="col-12 col-md-6">
-        <p><i class="fa-solid fa-chart-simple me-2 text-warning"></i>
-            Optimizați costurile și resursele, fără compromisuri
-        </p>
-      </div>
-      <div class="col-12 col-md-6">
-        <p><i class="fa-solid fa-rocket me-2 text-warning"></i>
-            Intervenții rapide, eficiență și profesionalism constant
-        </p>
-      </div>
-      <div class="col-12 col-md-6">
-        <p><i class="fa-solid fa-lock me-2 text-warning"></i>
-            Siguranță și confort pentru tine și chiriași
-        </p>
-      </div>
+<section class="why-az">
+  <!-- Top wave SVG -->
+  <div class="wave wave--top"></div>
+
+  <div class="container text-center">
+    <h2 class="section-title" data-aos="zoom-in">De ce AZfacility?</h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+      4 motive pentru a lucra cu noi
+    </p>
+
+    <div class="features-grid">
+      <mat-card
+        class="feat-card"
+        *ngFor="let f of features; let i = index"
+        data-aos="flip-left"
+        [attr.data-aos-delay]="200 + i * 100"
+      >
+        <div
+          class="card-media"
+          [ngStyle]="{ 'background-image': 'url(' + f.img + ')' }"
+        ></div>
+        <mat-card-header>
+          <mat-icon>{{ f.matIcon }}</mat-icon>
+          <mat-card-title>{{ f.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ f.text }}</p>
+        </mat-card-content>
+      </mat-card>
     </div>
   </div>
+
+  <!-- Bottom wave SVG -->
+  <div class="wave wave--bottom"></div>
 </section>
 
 <!-- 3) Servicii principale -->
