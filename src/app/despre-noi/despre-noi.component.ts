@@ -31,27 +31,57 @@ interface ServiceItem {
   styleUrl: './despre-noi.component.scss'
 })
 export class DespreNoiComponent {
-   aboutBlocks = [
-  {
-    title: 'Ce servicii oferim?',
-    list: [
-      'Administrăm proprietăți închiriate: gestionăm chiriași, contracte, plăți, întreținere.',
-      'Asigurăm întreținerea clădirilor: curățenie, reparații, instalații, echipe tehnice.',
-      'Monitorizăm utilitățile: transmitem indexuri, plătim facturi și ținem legătura cu furnizorii.',
-    ],
-    img: 'about1.jpg'
-  },
-  {
-    title: 'De ce noi?',
-    list: [
-      'Servicii complete, ca tu să nu cauți mai mulți furnizori.',
-      'Accent pe optimizarea costurilor operaționale.',
-      'Transparență și comunicare deschisă.',
-      'Procese administrative și tehnice fluent executate.',
-    ],
-    img: 'about2.jpg'
-  }
-];
+
+  aboutBlocks = [
+    {
+      title: 'Ce servicii oferim?',
+      img: 'about1.jpg',
+      items: [
+        {
+          icon: 'fa-solid fa-building',
+          label: 'Administrăm proprietăți închiriate',
+          text: 'gestiune chiriași, contracte, plăți, întreținere.'
+        },
+        {
+          icon: 'fa-solid fa-hammer',
+          label: 'Întreținerea clădirilor',
+          text: 'curățenie, reparații, instalații, echipe tehnice.'
+        },
+        {
+          icon: 'fa-solid fa-bolt',
+          label: 'Monitorizăm utilitățile',
+          text: 'transmitem indexuri, plătim facturi și ținem legătura cu furnizorii.'
+        }
+      ]
+    },
+    {
+      title: 'De ce noi?',
+      img: 'about2.jpg',
+      items: [
+        {
+          icon: 'fa-solid fa-layer-group',
+          label: 'Servicii complete',
+          text: 'ca tu să nu cauți mai mulți furnizori.'
+        },
+        {
+          icon: 'fa-solid fa-coins',
+          label: 'Optimizare costuri',
+          text: 'accent pe costurile operaționale fără compromisuri.'
+        },
+        {
+          icon: 'fa-solid fa-eye',
+          label: 'Transparență',
+          text: 'comunicare deschisă și informare constantă.'
+        },
+        {
+          icon: 'fa-solid fa-cogs',
+          label: 'Procese fluent executate',
+          text: 'administrative și tehnice fără întreruperi.'
+        }
+      ]
+    }
+  ];
+
 
 // values‐section data
 valuesTitle    = 'Valorile noastre';

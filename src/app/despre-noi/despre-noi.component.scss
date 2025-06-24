@@ -39,9 +39,46 @@
     }
   }
 
+ .desc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: grid;
+      /* prima coloană: iconiţa (fix width), a doua: textul */
+      grid-template-columns: 1.5rem 1fr;
+      column-gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      align-items: start;
+    }
+
+    /* Iconiţele rămân aurii, fără margin-top */
+    i {
+      color: #ffc451;
+      font-size: 1.3rem;
+      margin: 0;         /* eliminăm margin-top */
+      justify-self: start;
+      align-self: start;
+    }
+
+    span {
+      color: #222;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    /* bold-uim strict eticheta din interior */
+    span strong {
+      font-weight: 700;
+    }
+  }
+
+
   /* Alternating detail blocks */
   .about-details {
     padding: 3rem 0;
+    
 
     .container {
       max-width: 1000px;
@@ -97,6 +134,8 @@
         &.reverse { direction: ltr; }
       }
     }
+
+    
   }
 
   /* Services grid section */

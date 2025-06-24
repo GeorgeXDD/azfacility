@@ -22,7 +22,10 @@
       <div class="text">
         <h3>{{ block.title }}</h3>
         <ul class="desc-list">
-          <li *ngFor="let item of block.list">{{ item }}</li>
+          <li *ngFor="let item of block.items">
+            <i [ngClass]="item.icon"></i>
+            <span><strong>{{ item.label }}:</strong> {{ item.text }}</span>
+          </li>
         </ul>
       </div>
       <div
@@ -32,6 +35,8 @@
     </div>
   </div>
 </section>
+
+
 
 <!-- 3) Values Section -->
 <section class="values-section">
