@@ -57,8 +57,9 @@
   }
 
   .navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
     color: #fff !important;
     margin-right: 2rem;
   }
@@ -83,7 +84,6 @@
 .footer {
   text-align: center;
   padding: 1rem;
-  background: #f5f5f5;
   font-size: 0.9rem;
   color: #555;
   margin-top: 2rem;
@@ -99,4 +99,13 @@
         font-weight: 600;
         font-size: medium;
     }
+    button[mat-button] {
+    border-color: #ffc451;
+
+    &:hover {
+        color: #ffc451;
+        background: rgba(255,196,81,0.1);
+    }
+  }
 }
+.accent-dot { color:#ffc451; }

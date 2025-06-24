@@ -15,11 +15,22 @@
   </div>
 </div>
 
+<!-- home.component.html -->
 <section class="why-az">
   <!-- Top wave SVG -->
-  <div class="wave wave--top"></div>
+<div class="wave wave--top">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+    <path
+      d="M0,100 
+         C360,0  720,100 1440,0
+         L1440,100 
+         L0,100 Z"
+    fill="#e9ecef"
+    />
+  </svg>
+</div>
 
-  <div class="container text-center">
+  <div class="container">
     <h2 class="section-title" data-aos="zoom-in">De ce AZfacility?</h2>
     <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
       4 motive pentru a lucra cu noi
@@ -37,9 +48,9 @@
           [ngStyle]="{ 'background-image': 'url(' + f.img + ')' }"
         ></div>
         <mat-card-header>
-          <mat-icon>{{ f.matIcon }}</mat-icon>
-          <mat-card-title>{{ f.title }}</mat-card-title>
+          <i [class]="f.iconClass"></i>
         </mat-card-header>
+        <mat-card-title>{{ f.title }}</mat-card-title>
         <mat-card-content>
           <p>{{ f.text }}</p>
         </mat-card-content>
@@ -48,83 +59,105 @@
   </div>
 
   <!-- Bottom wave SVG -->
-  <div class="wave wave--bottom"></div>
+  <div class="wave wave--bottom">
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path
+        d="M0,80 C360,0 720,100 1080,40 L1440,0 L1440,100 L0,100 Z"
+        fill="#e9ecef"
+      />
+    </svg>
+  </div>
 </section>
 
+
 <!-- 3) Servicii principale -->
-<section class="main-services py-5 futuristic">
+<section class="main-services-alt py-7" style="margin-top: 2rem">
   <div class="container">
-    <h2 class="section-title text-center mb-4">Servicii de Administrare a Proprietății</h2>
-    <div class="row g-4">
-      <div class="col-12 col-md-6">
-        <h5><i class="fa-solid fa-briefcase me-2 text-warning"></i>Administrare zilnică</h5>
-        <p>Gestionează-ți imobilul fără bătăi de cap: contracte de închiriere, facturarea utilităților, relația cu chiriașii.</p>
+    <h2 class="section-title text-center mb-4">
+      Servicii de Administrare a Proprietății
+    </h2>
+
+    <div class="carousel-wrapper">
+      <button class="arrow left" (click)="prev()">
+        <i class="fa fa-chevron-left"></i>
+      </button>
+
+      <!-- THIS is the scroll container -->
+      <div class="carousel-viewport" #viewport>
+        <div class="carousel-track">
+          <div
+            class="card"
+            *ngFor="let svc of mainServices"
+            #card
+          >
+            <img [src]="svc.img" alt="{{ svc.title }}" />
+            <h5>{{ svc.title }}</h5>
+            <p>{{ svc.desc }}</p>
+          </div>
+        </div>
       </div>
-      <div class="col-12 col-md-6">
-        <h5><i class="fa-solid fa-hammer me-2 text-warning"></i>Întreținere și Reparații</h5>
-        <p>Întreținere preventivă pentru instalații electrice, sanitare, HVAC și intervenții rapide la orice defecțiune.</p>
-      </div>
-      <div class="col-12 col-md-6">
-        <h5><i class="fa-solid fa-broom me-2 text-warning"></i>Servicii de Curățenie</h5>
-        <p>Curățenie zilnică, periodică sau post-construcție şi întreținerea spațiilor verzi – impecabil, fără stres.</p>
-      </div>
-      <div class="col-12 col-md-6">
-        <h5><i class="fa-solid fa-shield-halved me-2 text-warning"></i>Pază și Supraveghere</h5>
-        <p>Soluții complete 24/7: monitorizare video, pază fizică, alarme şi raportări detaliate.</p>
-      </div>
-      <div class="col-12 col-md-6">
-        <h5><i class="fa-solid fa-tree-city me-2 text-warning"></i>Amenajare Spații Verzi</h5>
-        <p>Proiectare și întreținere de grădini, parcuri și zone verzi – pentru relaxare și recreere.</p>
-      </div>
+
+      <button class="arrow right" (click)="next()">
+        <i class="fa fa-chevron-right"></i>
+      </button>
     </div>
   </div>
 </section>
 
 <!-- 4) Cum te ajutăm? -->
-<section class="how-help py-5 text-center">
+<section class="about-details py-5">
   <div class="container">
-    <h2 class="section-title mb-4">Cum te ajutăm să economisești și să te bucuri de liniște?</h2>
-    <div class="row justify-content-center gy-3">
-      <div class="col-12 col-md-4">
-        <p><i class="fa-solid fa-calculator me-2 text-warning"></i><strong>Optimizăm costurile</strong><br/>
-           Te ajutăm să reduci costurile operaționale, fără a compromite calitatea.
-        </p>
+    <h2
+      class="section-title mb-4"
+      data-aos="zoom-in"
+    >
+      Cum te ajutăm să economisești și să te bucuri de liniște?
+    </h2>
+    <div
+      class="detail"
+      *ngFor="let block of helps; let i = index"
+      [class.reverse]="i % 2 === 1"
+      data-aos="fade-up"
+      [attr.data-aos-delay]="i * 200"
+    >
+      <div class="text">
+        <h3>{{ block.title }}</h3>
+        <ul class="desc-list">
+          <li *ngFor="let item of block.list">{{ item }}</li>
+        </ul>
       </div>
-      <div class="col-12 col-md-4">
-        <p><i class="fa-solid fa-clock me-2 text-warning"></i><strong>Servicii la timp</strong><br/>
-           Intervenții rapide, pentru ca tu să nu pierzi niciun moment în activitate.
-        </p>
-      </div>
-      <div class="col-12 col-md-4">
-        <p><i class="fa-solid fa-handshake me-2 text-warning"></i><strong>Transparență totală</strong><br/>
-           Comunicăm constant cu tine, ca tu să ai mereu toate informațiile.
-        </p>
-      </div>
+      <div
+        class="image"
+        [ngStyle]="{ 'background-image': 'url(' + block.img + ')' }"
+      ></div>
     </div>
   </div>
 </section>
 
 <!-- 5) Tipuri de proprietăți -->
 <section class="property-types py-5 bg-light">
-  <div class="container">
-    <h2 class="section-title text-center mb-4">Ce tipuri de proprietăți administrăm?</h2>
-    <div class="row text-center gy-4">
-      <div class="col-6 col-md-3">
-        <i class="fa-solid fa-building fa-2x text-warning mb-2"></i>
-        <p>Clădiri de birouri & business center</p>
-      </div>
-      <div class="col-6 col-md-3">
-        <i class="fa-solid fa-shop fa-2x text-warning mb-2"></i>
-        <p>Spații comerciale & mall-uri</p>
-      </div>
-      <div class="col-6 col-md-3">
-        <i class="fa-solid fa-house fa-2x text-warning mb-2"></i>
-        <p>Ansambluri rezidențiale & apartamente</p>
-      </div>
-      <div class="col-6 col-md-3">
-        <i class="fa-solid fa-industry fa-2x text-warning mb-2"></i>
-        <p>Spații industriale & logistice</p>
-      </div>
+  <div class="container text-center">
+    <h2 
+      class="section-title mb-4" 
+      data-aos="zoom-in"
+    >
+      Ce tipuri de proprietăți administrăm?
+    </h2>
+
+    <div class="prop-grid">
+      <mat-card
+        class="prop-card"
+        *ngFor="let p of propertyTypes; let i = index"
+        data-aos="flip-up"
+        [attr.data-aos-delay]="100 + i * 100"
+      >
+        <div class="card-icon">
+          <i [class]="p.iconClass + ' fa-2x text-warning'"></i>
+        </div>
+        <mat-card-content>
+          <p>{{ p.title }}</p>
+        </mat-card-content>
+      </mat-card>
     </div>
   </div>
 </section>
