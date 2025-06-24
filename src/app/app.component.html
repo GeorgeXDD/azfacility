@@ -1,18 +1,61 @@
-<mat-toolbar color="primary" class="px-4">
-  <span class="navbar-brand">GP.</span>
-  <span class="flex-spacer"></span>
+<mat-sidenav-container class="sidenav-container">
+  <!-- Mobile drawer -->
+  <mat-sidenav #drawer class="mobile-sidenav" mode="over" opened="false">
+    <nav class="mobile-nav">
+      <button mat-button routerLink="/"      (click)="drawer.close()">Acasă</button>
+      <button mat-button routerLink="/despre-noi" (click)="drawer.close()">Despre noi</button>
+      <button mat-button routerLink="/servicii"   (click)="drawer.close()">Servicii</button>
+      <button mat-button routerLink="/angajare"   (click)="drawer.close()">Angajare</button>
+      <button mat-button routerLink="/contact"   (click)="drawer.close()">Contact</button>
+    </nav>
+  </mat-sidenav>
 
-  <button mat-button routerLink="/">Acasă</button>
-  <button mat-button routerLink="/despre-noi">Despre noi</button>
-  <button mat-button routerLink="/servicii">Servicii</button>
-  <button mat-button routerLink="/angajare">Angajare</button>
-  <button mat-button routerLink="/contact">Contact</button>
+  <mat-sidenav-content>
+    <!-- Top info bar (desktop only) -->
+    <div class="top-bar d-none d-md-flex">
+      <div class="inner">
+        <span class="info-item">
+          <i class="fa-solid fa-envelope"></i>
+          contact&#64;gp.com
+        </span>
+        <span class="info-item">
+          <i class="fa-solid fa-phone"></i>
+          +40 123 456 789
+        </span>
+      </div>
+    </div>
 
-  <span class="flex-spacer"></span>
-</mat-toolbar>
+    <!-- Toolbar -->
+    <mat-toolbar class="navbar">
+      <!-- mobile menu button -->
+      <button
+        mat-icon-button
+        class="mobile-menu-btn d-lg-none"
+        (click)="drawer.toggle()"
+      >
+        <i style="color: white" class="fa-solid fa-bars"></i>
+        <!-- <span style="color: white">MENIU</span> -->
+      </button>
 
-<router-outlet></router-outlet>
+      <span class="flex-spacer"></span>
 
-<footer class="footer">
-  <p>© 2025 GP. Toate drepturile rezervate.</p>
-</footer>
+      <!-- desktop nav -->
+      <div class="nav-center d-none d-lg-flex test">
+        <span class="navbar-brand">AZ.</span>
+        <button mat-button routerLink="/">Acasă</button>
+        <button mat-button routerLink="/despre-noi">Despre noi</button>
+        <button mat-button routerLink="/servicii">Servicii</button>
+        <button mat-button routerLink="/angajare">Angajare</button>
+        <button mat-button routerLink="/contact">Contact</button>
+      </div>
+
+      <span class="flex-spacer"></span>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+
+    <footer class="footer">
+      <p>© 2025 GP. Toate drepturile rezervate.</p>
+    </footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

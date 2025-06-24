@@ -1,1 +1,132 @@
-<p>home works!</p>
+<div class="hero">
+  <div class="hero-content">
+    <h1>
+      AZ<span class="accent-dot">.</span> Facility<br />
+      Your Digital Partner
+    </h1>
+    <p>We are team of talented digital marketers</p>
+  </div>
+
+  <div class="services">
+    <div class="service-card" *ngFor="let svc of services">
+      <i [class]="svc.icon"></i>
+      <h5>{{ svc.title }}</h5>
+    </div>
+  </div>
+</div>
+
+<!-- 2) “De ce AZfacility?” -->
+<section class="why-az py-5">
+  <div class="container">
+    <h2 class="section-title text-center mb-4">De ce AZfacility?</h2>
+    <div class="row gy-3">
+      <div class="col-12 col-md-6">
+        <p><i class="fa-solid fa-seedling me-2 text-warning"></i>
+            Management complet al proprietății tale, de la A la Z
+        </p>
+      </div>
+      <div class="col-12 col-md-6">
+        <p><i class="fa-solid fa-chart-simple me-2 text-warning"></i>
+            Optimizați costurile și resursele, fără compromisuri
+        </p>
+      </div>
+      <div class="col-12 col-md-6">
+        <p><i class="fa-solid fa-rocket me-2 text-warning"></i>
+            Intervenții rapide, eficiență și profesionalism constant
+        </p>
+      </div>
+      <div class="col-12 col-md-6">
+        <p><i class="fa-solid fa-lock me-2 text-warning"></i>
+            Siguranță și confort pentru tine și chiriași
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3) Servicii principale -->
+<section class="main-services py-5 futuristic">
+  <div class="container">
+    <h2 class="section-title text-center mb-4">Servicii de Administrare a Proprietății</h2>
+    <div class="row g-4">
+      <div class="col-12 col-md-6">
+        <h5><i class="fa-solid fa-briefcase me-2 text-warning"></i>Administrare zilnică</h5>
+        <p>Gestionează-ți imobilul fără bătăi de cap: contracte de închiriere, facturarea utilităților, relația cu chiriașii.</p>
+      </div>
+      <div class="col-12 col-md-6">
+        <h5><i class="fa-solid fa-hammer me-2 text-warning"></i>Întreținere și Reparații</h5>
+        <p>Întreținere preventivă pentru instalații electrice, sanitare, HVAC și intervenții rapide la orice defecțiune.</p>
+      </div>
+      <div class="col-12 col-md-6">
+        <h5><i class="fa-solid fa-broom me-2 text-warning"></i>Servicii de Curățenie</h5>
+        <p>Curățenie zilnică, periodică sau post-construcție şi întreținerea spațiilor verzi – impecabil, fără stres.</p>
+      </div>
+      <div class="col-12 col-md-6">
+        <h5><i class="fa-solid fa-shield-halved me-2 text-warning"></i>Pază și Supraveghere</h5>
+        <p>Soluții complete 24/7: monitorizare video, pază fizică, alarme şi raportări detaliate.</p>
+      </div>
+      <div class="col-12 col-md-6">
+        <h5><i class="fa-solid fa-tree-city me-2 text-warning"></i>Amenajare Spații Verzi</h5>
+        <p>Proiectare și întreținere de grădini, parcuri și zone verzi – pentru relaxare și recreere.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4) Cum te ajutăm? -->
+<section class="how-help py-5 text-center">
+  <div class="container">
+    <h2 class="section-title mb-4">Cum te ajutăm să economisești și să te bucuri de liniște?</h2>
+    <div class="row justify-content-center gy-3">
+      <div class="col-12 col-md-4">
+        <p><i class="fa-solid fa-calculator me-2 text-warning"></i><strong>Optimizăm costurile</strong><br/>
+           Te ajutăm să reduci costurile operaționale, fără a compromite calitatea.
+        </p>
+      </div>
+      <div class="col-12 col-md-4">
+        <p><i class="fa-solid fa-clock me-2 text-warning"></i><strong>Servicii la timp</strong><br/>
+           Intervenții rapide, pentru ca tu să nu pierzi niciun moment în activitate.
+        </p>
+      </div>
+      <div class="col-12 col-md-4">
+        <p><i class="fa-solid fa-handshake me-2 text-warning"></i><strong>Transparență totală</strong><br/>
+           Comunicăm constant cu tine, ca tu să ai mereu toate informațiile.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5) Tipuri de proprietăți -->
+<section class="property-types py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title text-center mb-4">Ce tipuri de proprietăți administrăm?</h2>
+    <div class="row text-center gy-4">
+      <div class="col-6 col-md-3">
+        <i class="fa-solid fa-building fa-2x text-warning mb-2"></i>
+        <p>Clădiri de birouri & business center</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <i class="fa-solid fa-shop fa-2x text-warning mb-2"></i>
+        <p>Spații comerciale & mall-uri</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <i class="fa-solid fa-house fa-2x text-warning mb-2"></i>
+        <p>Ansambluri rezidențiale & apartamente</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <i class="fa-solid fa-industry fa-2x text-warning mb-2"></i>
+        <p>Spații industriale & logistice</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6) Final Call-to-Action -->
+<section class="cta-final py-5 text-center">
+  <div class="container">
+    <h2 class="section-title mb-3">Voi relaxați, noi organizați!</h2>
+    <p class="mb-4">AZfacility, partenerul de încredere pentru administrarea și întreținerea proprietății tale.</p>
+    <button mat-button color="warning">Contactează-ne acum</button>
+  </div>
+</section>

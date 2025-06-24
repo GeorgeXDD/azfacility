@@ -1,0 +1,148 @@
+.hero {
+  position: relative;
+  background: url('/big-image-bw.png') center/cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    h1 { font-size: 3rem; line-height:1.2; margin:0; }
+    .accent-dot { color:#ffc451; }
+    p  { margin-top:0.5rem; }
+  }
+
+    .hero-content h1,
+    .hero-content p,
+    .services .service-card h5 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    }
+
+  .services {
+    position: relative;
+    z-index: 2;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem;
+    width: 90%;
+    max-width: 1200px;
+  }
+
+  .service-card {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 2rem 1rem;
+    text-align: center;
+    transition: border-color 0.3s;
+    &:hover { border-color: #ffc451
+    ; h5 { color:#ffc451 }}
+
+    i {
+      font-size: 2rem;
+      color: #ffc451;
+      margin-bottom: 1rem;
+    }
+    h5 {
+      color: #fff;
+      font-weight: 500;
+      margin: 0;
+    }
+  }
+}
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+  .hero-content h1 { font-size: 2rem; }
+  .hero-content p  { font-size: 1rem; }
+  .services { gap: 1rem; }
+}
+
+
+/* section titles */
+.section-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: #ffc451;
+    margin: 0.5rem auto 0;
+  }
+}
+
+/* 2) De ce AZfacility */
+.why-az {
+  p {
+    font-size: 1.05rem;
+    display: flex;
+    align-items: start;
+    i { font-size: 1.5rem; margin-top: 0.15rem; }
+  }
+}
+
+/* 3) Principale servicii */
+.main-services {
+  h5 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+  }
+  p {
+    margin-top: 0.5rem;
+    color: #555;
+  }
+}
+
+/* 4) Cum te ajutăm */
+.how-help {
+  p {
+    font-size: 1rem;
+    strong { font-weight: 600; }
+    i { font-size: 1.5rem; }
+  }
+}
+
+/* 5) Tipuri de proprietăți */
+.property-types {
+  i { color: #ffc451; }
+  p {
+    margin-top: 0.5rem;
+    font-weight: 500;
+  }
+}
+
+/* 6) Final CTA */
+.cta-final {
+  background: #222;
+  color: #fff;
+  .section-title::after { background: #fff; }
+  button[mat-button] {
+    border-color: #ffc451;
+    color: #ffc451;
+    &:hover {
+      background: rgba(255,196,81,0.1);
+    }
+  }
+}
