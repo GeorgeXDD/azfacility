@@ -1,1 +1,74 @@
-<p>despre-noi works!</p>
+<!-- Hero -->
+<div class="hero about-hero">
+  <div class="hero-content">
+    <h1>
+      Partenerul tău de încredere<span class="accent-dot">.</span><br />
+      
+    </h1>
+    <p>
+      Oferim administrare completă a proprietăților, transformând fiecare imobil într-o investiție profitabilă și confortabilă.
+    </p>
+  </div>
+</div>
+
+<!-- Two alternating blocks -->
+<section class="about-details">
+  <div class="container">
+    <div
+      class="detail"
+      *ngFor="let block of aboutBlocks; let i = index"
+      [class.reverse]="i % 2 === 1"
+    >
+      <div class="text">
+        <h3>{{ block.title }}</h3>
+        <ul class="desc-list">
+          <li *ngFor="let item of block.list">{{ item }}</li>
+        </ul>
+      </div>
+      <div
+        class="image"
+        [ngStyle]="{ 'background-image': 'url(' + block.img + ')' }"
+      ></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3) Values Section -->
+<section class="values-section">
+  <div class="container">
+    <div class="values-grid">
+      <!-- left: title + bullets -->
+      <div class="values-content">
+        <h2 class="section-title">{{ valuesTitle }}</h2>
+        <p class="subtitle">{{ valuesSubtitle }}</p>
+        <ul class="values-list">
+          <li *ngFor="let v of valuesList">
+            <i class="fa-solid fa-check check-icon"></i>
+            <span><strong>{{ v.label }}</strong> – {{ v.text }}</span>
+          </li>
+        </ul>
+      </div>
+      <!-- right: background‐image -->
+      <div
+        class="values-image"
+        [ngStyle]="{ 'background-image': 'url(' + valuesImg + ')' }"
+      ></div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Services grid section (FontAwesome) -->
+<section class="services-list">
+  <div class="container">
+    <h2 class="section-title">Serviciile noastre</h2>
+    <div class="grid">
+      <div *ngFor="let s of serviceItems" class="card">
+        <i [ngClass]="'fa-solid fa-' + s.icon"></i>
+        <h4>{{ s.title }}</h4>
+        <p>{{ s.desc }}</p>
+      </div>
+    </div>
+  </div>
+</section>
