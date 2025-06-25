@@ -18,7 +18,7 @@
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 32px;
-  background: transparent !important;
+  background: #5ca9bc !important;
   z-index: 15;
 
   .inner {
@@ -48,7 +48,7 @@
   background: transparent !important;
   box-shadow: none !important;
   align-items: center;
-  justify-content: flex-start; /* meniu centrat ulterior de spacer-ul unic */
+  justify-content: flex-start;
   height: 64px;
   z-index: 14;
   padding: 0 1rem;
@@ -79,7 +79,7 @@
 
 .nav-center button.active,
 .mobile-nav button.active {
-  color: #ffc451;
+  color: #34d2fa;
 }
 
 /* the little centered line */
@@ -92,7 +92,7 @@
   transform: translateX(-50%);
   width: 30px;                /* make this as long as you like */
   height: 2px;
-  background: #ffc451;
+  background: #00ccff;
   border-radius: 1px;         /* slightly rounded ends */
 }
 
@@ -106,7 +106,7 @@
       padding: 1rem;
       color: #fff;
       font-size: 1rem;
-      &:hover { background: rgba(255, 193, 7, 0.05); }
+      &:hover { background: rgba(55, 185, 255, 0.1); }
     }
   }
 }
@@ -128,15 +128,15 @@
         font-size:x-large;
     }
     button[mat-button] {
-    border-color: #ffc451;
+    border-color: #5ca9bc;
 
     &:hover {
-        color: #ffc451;
-        background: rgba(255,196,81,0.1);
+        color: none;
+        background: none;
     }
   }
 }
-.accent-dot { color:#ffc451; }
+.accent-dot { color:#5ca9bc; }
 
 .footer-container {
   display: flex;            
@@ -151,4 +151,10 @@
   display: block;            
   max-width: 15em;           
   height: auto;
+}
+
+@media (max-width: 600px) {
+  .navbar-brand{
+    display: none;
+  }
 }

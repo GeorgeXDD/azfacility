@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  background: url('/big-image-bw.png') center/cover no-repeat;
+  background: url('/bg-idea.jpg') center/cover no-repeat;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -21,7 +21,7 @@
     position: relative;
     z-index: 2;
     h1 { font-size: 3rem; line-height:1.2; margin:0; }
-    .accent-dot { color:#ffc451; }
+    .accent-dot { color:#5ca9bc; }
     p  { margin-top:0.5rem; }
   }
 
@@ -49,12 +49,17 @@
     padding: 2rem 1rem;
     text-align: center;
     transition: border-color 0.3s;
-    &:hover { border-color: #ffc451
-    ; h5 { color:#ffc451 }}
+
+    border-radius: 1.5rem;  
+
+    &:hover {
+      border-color: #5ca9bc;
+      h5 { color: #5ca9bc }
+    }
 
     i {
       font-size: 2rem;
-      color: #ffc451;
+      color: #5ca9bc;
       margin-bottom: 1rem;
     }
     h5 {
@@ -94,7 +99,7 @@
     display: block;
     width: 50px;
     height: 4px;
-    background: #ffc451;
+    background: #5ca9bc;
     margin: 0.5rem auto 0;
   }
 }
@@ -104,7 +109,6 @@
 .why-az {
   position: relative;
   background-color: #e9ecef;
-//   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   padding: 6rem 0;
   overflow: visible; /* allow SVGs to show outside bounds */
 
@@ -134,7 +138,7 @@
 
   .container {
     position: relative;
-    z-index: 2;        /* above the waves */
+    z-index: 2;
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -155,7 +159,7 @@
   .features-grid {
     display: grid;
     gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   }
 
   .feat-card {
@@ -185,9 +189,9 @@
       margin-top: 1rem;
       i {
         font-size: 2rem;
-        color: #ffc451 !important;
+        color: #5ca9bc !important;
       }
-      color: #ffc451 !important
+      color: #5ca9bc !important
     }
 
     mat-card-title {
@@ -206,15 +210,22 @@
     }
     mat-card-header mat-icon,
     mat-card-header i {
-      color: #ffc451;
+      color: #5ca9bc;
     }
   }
 }
 
 /* 3) Principale servicii */
 .main-services-alt {
-  background: #fff;
+  background: #5ca9bc;
   padding: 4rem 0;
+
+  .section-title {
+    color: #fff !important;
+    &::after {
+      background: #fff;
+    }
+  }
 
   .carousel-wrapper {
     display: flex;
@@ -254,6 +265,7 @@
       margin: 0 0.5rem;                   /* half the gap on each side */
       background: #fff;
       border-radius: 8px;
+      border: none;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       text-align: center;
       overflow: hidden;
@@ -316,7 +328,7 @@ background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
           /* dacă aveai ::before, comentează-l */
           padding-left: 0;
            i {
-              color: #ffc451;
+              color: #5ca9bc;
               font-size: 1.25rem;
               margin-right: 0.5rem;
             }
@@ -379,7 +391,7 @@ background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     .desc-list {
       li {
         color: #fff;
-        &::before { color: #ffc451; }  // keep your bullets yellow
+        &::before { color: #5ca9bc; }  // keep your bullets yellow
       }
     }
   }
@@ -388,8 +400,15 @@ background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 
 /* 5) Tipuri de proprietăți */
 .property-types {
-  background: #fff;
+  background: #5ca9bc;
   padding: 4rem 0;
+
+    .section-title {
+    color: #ffffff; /* or whatever text color you want here */
+    &::after {
+      background: #ffffff; /* match the bar to your desired color */
+    }
+  }
 
   .prop-grid {
     display: grid;
@@ -415,7 +434,7 @@ background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     .card-icon {
       margin-bottom: 0.75rem;
       i {
-        color: #ffc451 !important;
+        color: #5ca9bc !important;
       }
     }
 
@@ -434,10 +453,10 @@ background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   color: #fff;
   .section-title::after { background: #fff; }
   button[mat-button] {
-    border-color: #ffc451;
-    color: #ffc451;
+    border-color: #5ca9bc;
+    color: #5ca9bc;
     &:hover {
-      background: rgba(255,196,81,0.1);
+      background: rgba(55, 185, 255, 0.1);
     }
   }
 }
