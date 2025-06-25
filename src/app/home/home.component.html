@@ -105,7 +105,7 @@
 </section>
 
 <!-- 4) Cum te ajutăm? -->
-<section class="about-details py-5">
+<section class="about-details py-5 help-container">
   <div class="container">
     <h2
       class="section-title mb-4"
@@ -117,6 +117,7 @@
       class="detail"
       *ngFor="let block of helps; let i = index"
       [class.reverse]="i % 2 === 1"
+      [class.accent]="i===1"
       data-aos="fade-up"
       [attr.data-aos-delay]="i * 200"
     >

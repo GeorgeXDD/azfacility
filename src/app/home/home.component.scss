@@ -332,6 +332,43 @@ background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   }
 }
 
+.help-container {
+  position: relative;
+  overflow: hidden;
+
+  // slanted dark bar
+  &::before {
+    content: '';
+    position: absolute;
+    top: 340px;       // start 180px from the top of the container
+    left: -25%;
+    width: 150%;
+    height: 360px;    // tall enough to cover ~three rows
+    background: #222;
+    transform: rotate(-5deg);
+    transform-origin: center;
+    z-index: 0;
+  }
+
+  // bring your actual content above the bar
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .detail.accent {
+    .text {
+      color: #fff;              // make all text white
+    }
+    .desc-list {
+      li {
+        color: #fff;
+        &::before { color: #ffc451; }  // keep your bullets yellow
+      }
+    }
+  }
+}
+
 
 /* 5) Tipuri de proprietăți */
 .property-types {
