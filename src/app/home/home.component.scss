@@ -72,6 +72,13 @@
   .services { gap: 1rem; }
 }
 
+.main-services-alt  .section-title,
+.about-details     .section-title {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
 
 /* section titles */
 .section-title {
@@ -178,8 +185,9 @@
       margin-top: 1rem;
       i {
         font-size: 2rem;
-        color: #ffc451;
+        color: #ffc451 !important;
       }
+      color: #ffc451 !important
     }
 
     mat-card-title {
@@ -195,6 +203,10 @@
         line-height: 1.4;
         margin: 0;
       }
+    }
+    mat-card-header mat-icon,
+    mat-card-header i {
+      color: #ffc451;
     }
   }
 }
@@ -298,16 +310,16 @@ background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
         padding: 0;
         margin: 0;
         li {
-          position: relative;
-          padding-left: 1.5rem;
+          display: flex;
+          align-items: flex-start;
           margin-bottom: .75rem;
-          &::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: #ffc451;
-          }
+          /* dacă aveai ::before, comentează-l */
+          padding-left: 0;
+           i {
+              color: #ffc451;
+              font-size: 1.25rem;
+              margin-right: 0.5rem;
+            }
         }
       }
     }
@@ -348,6 +360,10 @@ background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     transform: rotate(-5deg);
     transform-origin: center;
     z-index: 0;
+    @media (max-width: 768px) {
+      top: 400px;
+      height: 240px;
+    }
   }
 
   // bring your actual content above the bar
@@ -398,6 +414,9 @@ background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 
     .card-icon {
       margin-bottom: 0.75rem;
+      i {
+        color: #ffc451 !important;
+      }
     }
 
     mat-card-content p {

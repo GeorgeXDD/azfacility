@@ -33,12 +33,27 @@ export class HomeComponent implements AfterViewInit {
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
-  services = [
-    { icon: 'fas fa-binoculars',  title: 'Lorem Ipsum' },
-    { icon: 'fas fa-bullseye',    title: 'Dolor Sitema' },
-    { icon: 'fas fa-crosshairs',  title: 'Sedare Perspiciatis' },
-    { icon: 'fas fa-list',        title: 'Magni Dolores' },
-    { icon: 'fas fa-gem',         title: 'Nemos Enimade' },
+ services = [
+    {
+      icon: 'fas fa-building',
+      title: 'Servicii de Administrare a Proprietății'
+    },
+    {
+      icon: 'fas fa-hammer',
+      title: 'Întreținere și Reparații'
+    },
+    {
+      icon: 'fas fa-broom',
+      title: 'Servicii de Curățenie'
+    },
+    {
+      icon: 'fas fa-shield-halved',
+      title: 'Pază și Supraveghere'
+    },
+    {
+      icon: 'fas fa-seedling',
+      title: 'Întreținerea și Amenajarea Spațiilor Verzi'
+    }
   ];
 
   async ngAfterViewInit() {
@@ -106,55 +121,55 @@ export class HomeComponent implements AfterViewInit {
     {
       img: 'big-image.jpg',
       title: 'Administrare zilnică',
-      desc: 'Gestionează-ți imobilul fără bătăi de cap…'
+      desc: 'Gestionează-ți imobilul fără bătăi de cap!'
     },
     {
       img: 'big-image-bw.png',
       title: 'Întreținere și Reparații',
-      desc: 'Întreținere preventivă pentru instalații…'
+      desc: 'Întreținere preventivă pentru instalații!'
     },
     {
       img: 'big-image.jpg',
       title: 'Servicii de Curățenie',
-      desc: 'Curățenie zilnică, periodică sau post-construcție…'
+      desc: 'Curățenie zilnică, periodică sau post-construcție!'
     },
     {
       img: 'big-image-bw.png',
       title: 'Pază și Supraveghere',
-      desc: 'Soluții complete 24/7: monitorizare video…'
+      desc: 'Soluții complete 24/7: monitorizare video!'
     },
     {
       img: 'big-image.jpg',
       title: 'Amenajare Spații Verzi',
-      desc: 'Proiectare și întreținere de grădini…'
+      desc: 'Proiectare și întreținere de grădini!'
     }
   ];
 
   helps = [
     {
       title: 'Optimizăm costurile',
-      list: [
-        'Analiză detaliată a cheltuielilor operaționale',
-        'Planuri personalizate de reducere a costurilor',
-        'Raportări transparente și consultanță continuă'
+      items: [
+        { icon: 'fa-solid fa-chart-line',        text: 'Analiză detaliată a cheltuielilor operaționale' },
+        { icon: 'fa-solid fa-percent',           text: 'Planuri personalizate de reducere a costurilor' },
+        { icon: 'fa-solid fa-file-invoice-dollar', text: 'Raportări transparente și consultanță continuă' }
       ],
       img: 'about1.jpg'
     },
     {
       title: 'Servicii la timp',
-      list: [
-        'Echipă de intervenție disponibilă 24/7',
-        'Calendar digital de mentenanță programată',
-        'Alertare instantă pentru orice urgență'
+      items: [
+        { icon: 'fa-solid fa-headset',        text: 'Echipă de intervenție disponibilă 24/7' },
+        { icon: 'fa-solid fa-calendar-alt',   text: 'Calendar digital de mentenanță programată' },
+        { icon: 'fa-solid fa-bell',           text: 'Alertare instantă pentru orice urgență' }
       ],
       img: 'about2.jpg'
     },
     {
       title: 'Transparență totală',
-      list: [
-        'Acces online la toate rapoartele și facturile',
-        'Dashboard în timp real cu performanțele proprietății',
-        'Comunicare directă cu managerii de proiect'
+      items: [
+        { icon: 'fa-solid fa-globe',            text: 'Acces online la toate rapoartele și facturile' },
+        { icon: 'fa-solid fa-tachometer-alt',   text: 'Dashboard în timp real cu performanțele proprietății' },
+        { icon: 'fa-solid fa-comments',         text: 'Comunicare directă cu managerii de proiect' }
       ],
       img: 'values.jpg'
     }

@@ -2,9 +2,9 @@
   <div class="hero-content">
     <h1>
       AZ<span class="accent-dot">.</span> Facility<br />
-      Your Digital Partner
+      Management complet & costuri optimizate
     </h1>
-    <p>We are team of talented digital marketers</p>
+    <p>Intervenții rapide cu profesionalism constant</p>
   </div>
 
   <div class="services">
@@ -31,7 +31,7 @@
 </div>
 
   <div class="container">
-    <h2 class="section-title" data-aos="zoom-in">De ce AZfacility?</h2>
+    <h2 class="section-title" data-aos="zoom-in">De ce AZ Facility?</h2>
     <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
       4 motive pentru a lucra cu noi
     </p>
@@ -107,24 +107,25 @@
 <!-- 4) Cum te ajutăm? -->
 <section class="about-details py-5 help-container">
   <div class="container">
-    <h2
-      class="section-title mb-4"
-      data-aos="zoom-in"
-    >
+    <h2 class="section-title text-center mb-4" data-aos="zoom-in">
       Cum te ajutăm să economisești și să te bucuri de liniște?
     </h2>
+
     <div
       class="detail"
       *ngFor="let block of helps; let i = index"
       [class.reverse]="i % 2 === 1"
-      [class.accent]="i===1"
+      [class.accent]="i === 1"
       data-aos="fade-up"
       [attr.data-aos-delay]="i * 200"
     >
       <div class="text">
         <h3>{{ block.title }}</h3>
         <ul class="desc-list">
-          <li *ngFor="let item of block.list">{{ item }}</li>
+          <li *ngFor="let item of block.items">
+            <i [class]="item.icon + ' me-2'"></i>
+            {{ item.text }}
+          </li>
         </ul>
       </div>
       <div
