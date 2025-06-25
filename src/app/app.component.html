@@ -53,21 +53,15 @@
 
     <!-- Toolbar -->
     <mat-toolbar class="navbar">
-      <!-- mobile menu button -->
-      <button
-        mat-icon-button
-        class="mobile-menu-btn d-lg-none"
-        (click)="drawer.toggle()"
-      >
+      <button mat-icon-button class="mobile-menu-btn d-lg-none" (click)="drawer.toggle()">
         <i style="color: white" class="fa-solid fa-bars"></i>
-        <!-- <span style="color: white">MENIU</span> -->
       </button>
+      <span class="navbar-brand" style="padding-left: 20rem; margin-right: 5em">AZ<span class="accent-dot">.</span></span>
 
-      <span class="flex-spacer"></span>
+
 
       <!-- desktop nav -->
       <div class="nav-center d-none d-lg-flex test">
-        <span class="navbar-brand">AZ<span class="accent-dot">.</span></span>
         <button
           mat-button
           routerLink="/"

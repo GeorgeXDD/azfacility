@@ -24,11 +24,4 @@ import { MatSidenavModule }           from '@angular/material/sidenav';
 })
 export class AppComponent {
   title = 'AZFacility'
-  services = [
-    { icon: 'fas fa-binoculars',  title: 'Lorem Ipsum' },
-    { icon: 'fas fa-bullseye',    title: 'Dolor Sitema' },
-    { icon: 'fas fa-crosshairs',  title: 'Sedare Perspiciatis' },
-    { icon: 'fas fa-list',        title: 'Magni Dolores' },
-    { icon: 'fas fa-gem',         title: 'Nemos Enimade' },
-  ];
 }
