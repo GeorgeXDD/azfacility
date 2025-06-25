@@ -109,3 +109,18 @@
   }
 }
 .accent-dot { color:#ffc451; }
+
+.footer-container {
+  display: flex;            
+  justify-content: center;    
+  align-items: center;       
+  gap: 0.75rem;               
+  max-width: 200px;           
+  margin: 0 auto;             
+}
+
+.footer-logo {
+  display: block;            
+  max-width: 15em;           
+  height: auto;
+}
