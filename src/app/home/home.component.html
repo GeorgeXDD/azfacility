@@ -2,9 +2,9 @@
   <div class="hero-content">
     <h1>
       AZ<span class="accent-dot">.</span> Facility<br />
-      Management complet & costuri optimizate
+      <span>Management complet & costuri optimizate</span>
     </h1>
-    <p> your space, our care</p>
+    <p>Intervenții rapide cu profesionalism constant</p>
   </div>
 
   <div class="services">
@@ -71,8 +71,8 @@
 
 
 <!-- 3) Servicii principale -->
-<section class="main-services-alt py-7" style="margin-top: 2rem">
-  <div class="container">
+<section class="main-services-alt py-7" style="margin-top: 1rem">
+  <div class="wrapper">
     <h2 class="section-title text-center mb-4">
       Servicii de Administrare a Proprietății
     </h2>
@@ -133,33 +133,43 @@
         [ngStyle]="{ 'background-image': 'url(' + block.img + ')' }"
       ></div>
     </div>
+
+    <h2 class="section-title text-center mb-4" data-aos="zoom-in">
+      Un singur contract, un pachet complex de facilități!
+    </h2>
   </div>
 </section>
 
 <!-- 5) Tipuri de proprietăți -->
 <section class="property-types py-5">
-  <div class="container text-center">
-    <h2 
-      class="section-title mb-4" 
-      data-aos="zoom-in"
-    >
-      Ce tipuri de proprietăți administrăm?
-    </h2>
-
-    <div class="prop-grid">
-      <mat-card
-        class="prop-card"
-        *ngFor="let p of propertyTypes; let i = index"
-        data-aos="flip-up"
-        [attr.data-aos-delay]="100 + i * 100"
-      >
-        <div class="card-icon">
-          <i [class]="p.iconClass + ' fa-2x text-warning'"></i>
+  <div class="wrapper">
+    <div class="prop-layout">
+      <!-- LEFT: title + 2×2 grid -->
+      <div class="prop-left">
+        <h2 class="section-title" data-aos="zoom-in">
+          Ce tipuri de proprietăți administrăm?
+        </h2>
+        <div class="prop-grid">
+          <mat-card
+            class="prop-card"
+            *ngFor="let p of propertyTypes; let i = index"
+            data-aos="flip-up"
+            [attr.data-aos-delay]="100 + i * 100"
+          >
+            <div class="card-icon">
+              <i [class]="p.iconClass + ' fa-2x text-warning'"></i>
+            </div>
+            <mat-card-content>
+              <p>{{ p.title }}</p>
+            </mat-card-content>
+          </mat-card>
         </div>
-        <mat-card-content>
-          <p>{{ p.title }}</p>
-        </mat-card-content>
-      </mat-card>
+      </div>
+
+      <!-- RIGHT: lone call-out -->
+      <div class="prop-callout">
+        <p>We can’t manage<br>what we can’t measure!</p>
+      </div>
     </div>
   </div>
 </section>

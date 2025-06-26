@@ -27,7 +27,7 @@ export class HomeComponent implements AfterViewInit {
   @ViewChild('viewport', { static: false }) viewport!: ElementRef<HTMLDivElement>;
   @ViewChildren('card') cards!: QueryList<ElementRef<HTMLElement>>;
 
-  private scrollAmount = 0;
+  private autoPlayId: any;
   sliding = false;
   direction: 'next' | 'prev' = 'next';
 
@@ -62,33 +62,43 @@ export class HomeComponent implements AfterViewInit {
       AOS.init({ once: true, duration: 600 });
       AOS.refresh();
 
-      setInterval(() => this.calculateScrollAmount());
+      this.autoPlayId = setInterval(() => this.next(), 5000);
     }
   }
 
-   private calculateScrollAmount() {
-    if (!this.cards.first) return;
-    const el = this.cards.first.nativeElement;
-    const style = getComputedStyle(el);
-    const margin = parseFloat(style.marginLeft) + parseFloat(style.marginRight);
-    this.scrollAmount = el.offsetWidth + margin;
+    ngOnDestroy() {
+    if (this.autoPlayId) {
+      clearInterval(this.autoPlayId);
+    }
   }
 
   /** scroll viewport right by exactly one card */
   next() {
-    this.viewport.nativeElement.scrollBy({
-      left: this.scrollAmount,
-      behavior: 'smooth'
-    });
+    const amount = window.innerWidth < 768 ? 300 : 485;
+    const vp = this.viewport.nativeElement;
+    const max = vp.scrollWidth - vp.clientWidth;
+
+    if (vp.scrollLeft + amount >= max) {
+      // if moving by “amount” would go past the end, loop back to start
+      vp.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      vp.scrollBy({ left: amount, behavior: 'smooth' });
+    }
   }
 
-  /** scroll viewport left by exactly one card */
   prev() {
-    this.viewport.nativeElement.scrollBy({
-      left: -this.scrollAmount,
-      behavior: 'smooth'
-    });
+    const amount = window.innerWidth < 768 ? 300 : 485;
+    const vp = this.viewport.nativeElement;
+    const max = vp.scrollWidth - vp.clientWidth;
+
+    if (vp.scrollLeft - amount <= 0) {
+      // if moving left by “amount” goes before the start, loop to the end
+      vp.scrollTo({ left: max, behavior: 'smooth' });
+    } else {
+      vp.scrollBy({ left: -amount, behavior: 'smooth' });
+    }
   }
+
 
   features = [
     {
@@ -121,27 +131,27 @@ export class HomeComponent implements AfterViewInit {
     {
       img: 'big-image.jpg',
       title: 'Administrare zilnică',
-      desc: 'Gestionează-ți imobilul fără bătăi de cap!'
+      desc: 'Preluăm toate sarcinile zilnice – contracte de închiriere, facturare utilităţi şi relaţia cu chiriaşii – ca tu să te concentrezi pe obiectivele tale.'
     },
     {
       img: 'big-image-bw.png',
       title: 'Întreținere și Reparații',
-      desc: 'Întreținere preventivă pentru instalații!'
+      desc: 'Monitorizăm preventiv instalaţiile (electrice, sanitare, HVAC) și intervenim prompt la orice defecţiune pentru a evita costuri suplimentare.'
     },
     {
       img: 'big-image.jpg',
       title: 'Servicii de Curățenie',
-      desc: 'Curățenie zilnică, periodică sau post-construcție!'
+      desc: 'Asigurăm curățenie zilnică, periodică sau post-construcție în birouri, apartamente, spații comerciale și întreţinerea spaţiilor verzi.'
     },
     {
       img: 'big-image-bw.png',
       title: 'Pază și Supraveghere',
-      desc: 'Soluții complete 24/7: monitorizare video!'
+      desc: 'Oferim soluţii integrate de supraveghere video și pază fizică pentru protecţia completă a proprietăţii tale.'
     },
     {
       img: 'big-image.jpg',
       title: 'Amenajare Spații Verzi',
-      desc: 'Proiectare și întreținere de grădini!'
+      desc: 'Creăm și întreținem grădini, parcuri și zone verzi care îmbină estetica cu funcționalitatea.'
     }
   ];
 

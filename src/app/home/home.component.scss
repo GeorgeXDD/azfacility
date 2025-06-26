@@ -227,6 +227,12 @@
     }
   }
 
+  .wrapper{
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
   .carousel-wrapper {
     display: flex;
     align-items: center;
@@ -261,7 +267,7 @@
     }
 
     .card {
-      flex: 0 0 calc((100% - 2rem) / 3); /* three cards full-width minus gaps */
+      flex: 0 0 calc((100% - 5rem) / 3); /* three cards full-width minus gaps */
       margin: 0 0.5rem;                   /* half the gap on each side */
       background: #fff;
       border-radius: 8px;
@@ -290,7 +296,7 @@
 
     @media (max-width: 992px) {
       .card {
-        flex: 0 0 calc((100% - 1rem) / 2); /* two cards on tablet */
+        flex: 0 0 calc((100% - 1rem)); /* two cards on tablet */
       }
     }
   }
@@ -402,47 +408,98 @@ background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 .property-types {
   background: #5ca9bc;
   padding: 4rem 0;
+  color: #fff;
 
-    .section-title {
-    color: #ffffff; /* or whatever text color you want here */
-    &::after {
-      background: #ffffff; /* match the bar to your desired color */
+  .prop-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-top: 2rem;
+
+    // left column (title + grid)
+    .prop-left {
+      margin-left: 3em;
+      flex: 0 0 55%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .section-title {
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        color: #fff;
+        &::after { background: #fff; }
+      }
+
+      .prop-grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+    }
+
+    // right column (call-out)
+    .prop-callout {
+      margin-right: 13em;
+      flex: 0 0 39%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      p {
+        font-size: 5rem;         
+        font-weight: 700;
+        line-height: 1.2;
+        text-align: center;
+        margin: 0;
+        color: #fff;
+      }
     }
   }
 
-  .prop-grid {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    padding: 0 1rem;
-    margin-top: 2rem;
-  }
-
   .prop-card {
+    background: #fff;
+    color: #444;
+    border-radius: 8px;
     text-align: center;
     padding: 1.5rem 1rem;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-    background: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
 
     &:hover {
       transform: translateY(-4px);
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
 
-    .card-icon {
-      margin-bottom: 0.75rem;
-      i {
-        color: #5ca9bc !important;
-      }
+    .card-icon i {
+      color: #5ca9bc !important;
     }
 
     mat-card-content p {
-      font-weight: 500;
-      color: #444;
       margin: 0;
+      font-weight: 500;
       line-height: 1.4;
+    }
+  }
+
+  // responsive: stack under each other on narrow screens
+  @media (max-width: 768px) {
+    .prop-layout {
+      flex-direction: column;
+
+      .prop-left,
+      .prop-callout {
+        flex: 0 0 100%;
+      }
+
+      .prop-callout {
+        margin-top: 2rem;
+        p {
+          font-size: 2rem;
+        }
+      }
     }
   }
 }
@@ -453,10 +510,13 @@ background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   color: #fff;
   .section-title::after { background: #fff; }
   button[mat-button] {
+    padding: 1.5rem 1.5rem;
+    border-radius: 2em;
     border-color: #5ca9bc;
-    color: #5ca9bc;
+    color: #ffffff;
+    background: #5ca9bc;
     &:hover {
-      background: rgba(55, 185, 255, 0.1);
+      background: rgba(55, 185, 255, 0.171);
     }
   }
 }

@@ -56,7 +56,16 @@
       <button mat-icon-button class="mobile-menu-btn d-lg-none" (click)="drawer.toggle()">
         <i style="color: white" class="fa-solid fa-bars"></i>
       </button>
-      <span class="navbar-brand" style="padding-left: 20rem; margin-right: 5em">AZ<span class="accent-dot">.</span></span>
+      <a class="navbar-brand">    
+        <div class="brand-main">
+          AZ<span class="accent-dot">.</span>
+        </div>
+        <div class="brand-tagline">
+          your space, our care
+        </div>
+      </a>
+
+
 
       <!-- desktop nav -->
       <div class="nav-center d-none d-lg-flex test">
@@ -94,14 +103,50 @@
     <router-outlet></router-outlet>
 
     <footer class="footer">
-      <p>© 2025 AZ Facility. Toate drepturile rezervate.</p>
-      <div class="footer-container">
-        <a href="https://reclamatiisal.anpc.ro/" target="_blank" rel="noopener">
-          <img src="footer-anpc.webp" alt="ANPC Logo" class="footer-logo">
-        </a>
-        <a href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=RO" target="_blank" rel="noopener">
-          <img src="footer-solutionarea.png" alt="Solutionarea ODR Logo" class="footer-logo">
-        </a>
+      <div class="footer-top container">
+        <!-- Social Media -->
+        <div class="footer-col">
+          <h4>Social Media</h4>
+          <ul class="footer-list">
+            <li><a href="https://facebook.com/YourPage" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+            <li><a href="https://instagram.com/YourPage" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="https://tiktok.com/@YourPage" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
+            <li><a href="https://twitter.com/YourPage" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+          </ul>
+        </div>
+
+        <!-- Utile -->
+        <div class="footer-col">
+          <h4>Utile</h4>
+          <ul class="footer-list">
+            <li><a routerLink="/termeni-si-conditii">Termeni și Condiții</a></li>
+            <li><a routerLink="/politica-de-cookies">Politica de Cookies</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-list">
+            <li><i class="fas fa-phone-alt"></i> +40 123 456 789</li>
+            <li><i class="fas fa-envelope"></i> contact&#64;azfacility.ro</li>
+            <li><i class="fas fa-map-marker-alt"></i> Str. Exemplu 10, București</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom container">
+        <p class="copyright">
+          © 2025 AZ Facility. Toate drepturile rezervate.
+        </p>
+        <div class="footer-logos">
+          <a href="https://reclamatiisal.anpc.ro/" target="_blank" rel="noopener">
+            <img src="footer-anpc.webp" alt="ANPC Logo" class="footer-logo">
+          </a>
+          <a href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=RO" target="_blank" rel="noopener">
+            <img src="footer-solutionarea.png" alt="Solutionarea ODR Logo" class="footer-logo">
+          </a>
+        </div>
       </div>
     </footer>
   </mat-sidenav-content>
