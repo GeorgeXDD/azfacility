@@ -1,0 +1,337 @@
+/* CONTAINER */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 3rem;
+  padding: 2rem;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+    padding: 1rem;
+  }
+}
+
+/* HERO */
+.servici-hero {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ), url('/bg-idea.jpg') center/cover no-repeat;
+  position: relative;
+  color: white;
+  text-align: center;
+  padding: 6rem 2rem;
+
+  .overlay {
+    display: none; // redundant cu gradient
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+
+      .accent-dot {
+        color: #F9A825;
+      }
+    }
+    p {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+  }
+}
+
+
+/* SIDEBAR */
+/* SIDEBAR */
+.servicii-sidebar {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  max-height: fit-content;
+  align-self: flex-start;
+  position: sticky;
+  top: 6rem;
+
+  @media (max-width: 992px) {
+    position: static;
+    width: 100%;
+    max-height: none;
+    margin-bottom: 2rem;
+  }
+
+  .sidebar-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #F9A825;
+    padding-bottom: 0.5rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    @media (max-width: 992px) {
+      flex-wrap: wrap;
+    }
+
+    li {
+      a {
+        display: block;
+        padding: 0.6rem 0.8rem;
+        border-radius: 6px;
+        text-decoration: none;
+        color: #333;
+        font-weight: 600;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: rgba(249, 168, 37, 0.1);
+          color: #F9A825;
+        }
+        &.active {
+          background: rgba(249, 168, 37, 0.15);
+          border-left: 4px solid #F9A825;
+          color: #F9A825;
+        }
+      }
+    }
+  }
+}
+
+/* CONTAINER responsive fix */
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+
+
+/* SERVICII CONTENT */
+.servicii-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  .servicii-section {
+    background: #f5f5f5;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
+
+    mat-card-header {
+      border-bottom: 1px solid #eee;
+      padding: 1.5rem 2rem;
+
+      mat-card-title {
+        display: flex;
+        align-items: center;
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: #333;
+        letter-spacing: -0.5px;
+
+        i {
+          font-size: 1.7rem;
+          margin-right: 0.8rem;
+          color: #F9A825;
+        }
+      }
+    }
+
+    mat-card-content {
+      padding: 2rem;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #444;
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      ul {
+        margin: 1rem 0 1rem 2rem;
+        list-style: none;
+        padding: 0;
+
+        li {
+          margin-bottom: 0.6rem;
+          display: flex;
+          align-items: center;
+
+          i {
+            margin-right: 0.6rem;
+            color: #F9A825;
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: #ff9900;
+            }
+          }
+        }
+      }
+    }
+
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    }
+  }
+}
+
+/* ANIMATION */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .servici-hero {
+    padding: 4rem 1rem;
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+    .hero-content p {
+      font-size: 1rem;
+    }
+  }
+  .servicii-sidebar mat-nav-list .mat-list-item {
+    flex: 1 1 100%;
+  }
+}
+
+.servicii-section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  transition: all 0.4s ease;
+}
+
+.servicii-section i {
+  transition: transform 0.3s, color 0.3s;
+}
+.servicii-section i:hover {
+  transform: scale(1.1);
+  color: #ff9900;
+}
+
+.card-flex {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+
+  .card-text {
+    flex: 1;
+  }
+
+  .card-image {
+    flex: 1;
+    img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    .card-image {
+      width: 100%;
+      margin-top: 1rem;
+    }
+  }
+}
+
+.section-anchor {
+  position: absolute;
+  top: -80px; /* compensează sticky header */
+  height: 1px;
+  width: 1px;
+}
+
+/* highlight boxes */
+.highlight-box {
+  //background: rgba(249, 168, 37, 0.1);
+  border-left: 4px solid #F9A825;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: #333;
+
+  i {
+    color: #F9A825;
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  &:hover {
+    background: rgba(249, 168, 37, 0.2);
+    cursor: default;
+  }
+}
+
+/* call to action inside each card */
+.cta-text {
+  margin-top: 1rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #F9A825;
+ /// background: rgba(249, 168, 37, 0.08);
+  border-left: 4px solid #F9A825;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  transition: background 0.3s;
+
+  &:hover {
+    background: rgba(249, 168, 37, 0.2);
+  }
+}
+
+/* responsive for highlights if needed */
+@media (max-width: 768px) {
+  .highlight-box {
+    flex-direction: column;
+    align-items: flex-start;
+
+    i {
+      margin-bottom: 0.4rem;
+    }
+  }
+}

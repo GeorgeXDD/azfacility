@@ -129,6 +129,13 @@
       &:hover { background: rgba(55, 185, 255, 0.1); }
     }
   }
+  .mobile-submenu {
+  padding-left: 1rem;
+  .submenu-item {
+    font-size: 0.9rem;
+  }
+}
+
 }
 
 .test {

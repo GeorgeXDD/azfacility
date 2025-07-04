@@ -8,31 +8,80 @@
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
         (click)="drawer.close()"
-      >Acasă</button>
+      >
+        Acasă
+      </button>
       <button
         mat-button
         routerLink="/despre-noi"
         routerLinkActive="active"
         (click)="drawer.close()"
-      >Despre noi</button>
+      >
+        Despre noi
+      </button>
       <button
         mat-button
         routerLink="/servicii"
         routerLinkActive="active"
         (click)="drawer.close()"
-      >Servicii</button>
+      >
+        Servicii
+      </button>
+      <div class="mobile-submenu">
+        <button
+          mat-button
+          class="submenu-item"
+          [routerLink]="['/servicii']"
+          fragment="curatenie"
+          (click)="drawer.close()"
+        >
+          – Curățenie
+        </button>
+        <button
+          mat-button
+          class="submenu-item"
+          [routerLink]="['/servicii']"
+          fragment="spatii-verzi"
+          (click)="drawer.close()"
+        >
+          – Spații verzi
+        </button>
+        <button
+          mat-button
+          class="submenu-item"
+          [routerLink]="['/servicii']"
+          fragment="renovari"
+          (click)="drawer.close()"
+        >
+          – Reparații și renovări
+        </button>
+        <button
+          mat-button
+          class="submenu-item"
+          [routerLink]="['/servicii']"
+          fragment="management-proprietati"
+          (click)="drawer.close()"
+        >
+          – Management proprietăți
+        </button>
+      </div>
+
       <button
         mat-button
         routerLink="/angajare"
         routerLinkActive="active"
         (click)="drawer.close()"
-      >Angajare</button>
+      >
+        Angajare
+      </button>
       <button
         mat-button
         routerLink="/contact"
         routerLinkActive="active"
         (click)="drawer.close()"
-      >Contact</button>
+      >
+        Contact
+      </button>
     </nav>
   </mat-sidenav>
 
@@ -57,19 +106,17 @@
 
     <!-- Toolbar -->
     <mat-toolbar class="navbar">
-      <button mat-icon-button class="mobile-menu-btn d-lg-none" (click)="drawer.toggle()">
+      <button
+        mat-icon-button
+        class="mobile-menu-btn d-lg-none"
+        (click)="drawer.toggle()"
+      >
         <i style="color: white" class="fa-solid fa-bars"></i>
       </button>
-      <a class="navbar-brand">    
-        <div class="brand-main">
-          AZ<span class="accent-dot">.</span>
-        </div>
-        <div class="brand-tagline">
-          your space, our care
-        </div>
+      <a class="navbar-brand">
+        <div class="brand-main">AZ<span class="accent-dot">.</span></div>
+        <div class="brand-tagline">your space, our care</div>
       </a>
-
-
 
       <!-- desktop nav -->
       <div class="nav-center d-none d-lg-flex test">
@@ -78,27 +125,58 @@
           routerLink="/"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
-        >Acasă</button>
+        >
+          Acasă
+        </button>
+        <button mat-button routerLink="/despre-noi" routerLinkActive="active">
+          Despre noi
+        </button>
+        <!-- Servicii dropdown -->
         <button
           mat-button
-          routerLink="/despre-noi"
-          routerLinkActive="active"
-        >Despre noi</button>
-        <button
-          mat-button
+          [matMenuTriggerFor]="serviciiMenu"
           routerLink="/servicii"
           routerLinkActive="active"
-        >Servicii</button>
-        <button
-          mat-button
-          routerLink="/angajare"
-          routerLinkActive="active"
-        >Cariere</button>
-        <button
-          mat-button
-          routerLink="/contact"
-          routerLinkActive="active"
-        >Contact</button>
+        >
+          Servicii
+        </button>
+        <mat-menu #serviciiMenu="matMenu">
+          <button
+            mat-menu-item
+            [routerLink]="['/servicii']"
+            fragment="curatenie"
+          >
+            Curățenie
+          </button>
+          <button
+            mat-menu-item
+            [routerLink]="['/servicii']"
+            fragment="spatii-verzi"
+          >
+            Spații verzi
+          </button>
+          <button
+            mat-menu-item
+            [routerLink]="['/servicii']"
+            fragment="renovari"
+          >
+            Reparații și renovări
+          </button>
+          <button
+            mat-menu-item
+            [routerLink]="['/servicii']"
+            fragment="management-proprietati"
+          >
+            Management proprietăți
+          </button>
+        </mat-menu>
+
+        <button mat-button routerLink="/angajare" routerLinkActive="active">
+          Cariere
+        </button>
+        <button mat-button routerLink="/contact" routerLinkActive="active">
+          Contact
+        </button>
       </div>
 
       <span class="flex-spacer"></span>
@@ -112,10 +190,26 @@
         <div class="footer-col">
           <h4>Social Media</h4>
           <ul class="footer-list">
-            <li><a href="https://facebook.com/YourPage" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
-            <li><a href="https://instagram.com/YourPage" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
-            <li><a href="https://tiktok.com/@YourPage" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
-            <li><a href="https://twitter.com/YourPage" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+            <li>
+              <a href="https://facebook.com/YourPage" target="_blank"
+                ><i class="fab fa-facebook-f"></i> Facebook</a
+              >
+            </li>
+            <li>
+              <a href="https://instagram.com/YourPage" target="_blank"
+                ><i class="fab fa-instagram"></i> Instagram</a
+              >
+            </li>
+            <li>
+              <a href="https://tiktok.com/@YourPage" target="_blank"
+                ><i class="fab fa-tiktok"></i> TikTok</a
+              >
+            </li>
+            <li>
+              <a href="https://twitter.com/YourPage" target="_blank"
+                ><i class="fab fa-twitter"></i> Twitter</a
+              >
+            </li>
           </ul>
         </div>
 
@@ -123,8 +217,12 @@
         <div class="footer-col">
           <h4>Utile</h4>
           <ul class="footer-list">
-            <li><a routerLink="/termeni-si-conditii">Termeni și Condiții</a></li>
-            <li><a routerLink="/politica-de-cookies">Politica de Cookies</a></li>
+            <li>
+              <a routerLink="/termeni-si-conditii">Termeni și Condiții</a>
+            </li>
+            <li>
+              <a routerLink="/politica-de-cookies">Politica de Cookies</a>
+            </li>
           </ul>
         </div>
 
@@ -134,21 +232,33 @@
           <ul class="footer-list">
             <li><i class="fas fa-phone-alt"></i> +40 123 456 789</li>
             <li><i class="fas fa-envelope"></i> contact&#64;azfacility.ro</li>
-            <li><i class="fas fa-map-marker-alt"></i> Str. Exemplu 10, București</li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i> Str. Exemplu 10, București
+            </li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom container">
-        <p class="copyright">
-          © 2025 AZ Facility. Toate drepturile rezervate.
-        </p>
+        <p class="copyright">© 2025 AZ Facility. Toate drepturile rezervate.</p>
         <div class="footer-logos">
-          <a href="https://reclamatiisal.anpc.ro/" target="_blank" rel="noopener">
-            <img src="footer-anpc.webp" alt="ANPC Logo" class="footer-logo">
+          <a
+            href="https://reclamatiisal.anpc.ro/"
+            target="_blank"
+            rel="noopener"
+          >
+            <img src="footer-anpc.webp" alt="ANPC Logo" class="footer-logo" />
           </a>
-          <a href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=RO" target="_blank" rel="noopener">
-            <img src="footer-solutionarea.png" alt="Solutionarea ODR Logo" class="footer-logo">
+          <a
+            href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=RO"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              src="footer-solutionarea.png"
+              alt="Solutionarea ODR Logo"
+              class="footer-logo"
+            />
           </a>
         </div>
       </div>

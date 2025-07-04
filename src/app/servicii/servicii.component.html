@@ -1,1 +1,209 @@
-<p>servicii works!</p>
+<section class="hero servici-hero" role="banner" aria-label="Prezentare servicii">
+  <div class="hero-content">
+    <h1>Serviciile noastre<span class="accent-dot">.</span></h1>
+    <p>O gamă completă de servicii pentru proprietățile tale, realizate cu grijă și profesionalism.</p>
+  </div>
+</section>
+
+<div class="container servici-main">
+  <aside class="servicii-sidebar" role="navigation" aria-label="Meniu servicii">
+    <h2 class="sidebar-title">Servicii</h2>
+    <nav>
+      <ul>
+        <li><a [routerLink]="[]" fragment="curatenie" [class.active]="currentSection === 'curatenie'">Curățenie profesională</a></li>
+        <li><a [routerLink]="[]" fragment="spatii-verzi" [class.active]="currentSection === 'spatii-verzi'">Spații verzi</a></li>
+        <li><a [routerLink]="[]" fragment="renovari" [class.active]="currentSection === 'renovari'">Reparații & renovări</a></li>
+        <li><a [routerLink]="[]" fragment="administrare" [class.active]="currentSection === 'administrare'">Administrare proprietăți</a></li>
+        <li><a [routerLink]="[]" fragment="ddd" [class.active]="currentSection === 'ddd'">Servicii DDD</a></li>
+        <li><a [routerLink]="[]" fragment="suport" [class.active]="currentSection === 'suport'">Servicii suport</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="servicii-content" role="main">
+
+  <!-- CURATENIE -->
+<mat-card id="curatenie" class="servicii-section" data-aos="fade-up">
+  <mat-card-header>
+    <mat-card-title><i class="fa-solid fa-broom"></i> Curățenie profesională</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="card-flex">
+      <div class="card-text">
+        <p>Asigurăm curățenie impecabilă, adaptată fiecărui tip de spațiu rezidențial, comercial sau industrial.</p>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> Curățenie generală și de întreținere</li>
+          <li><i class="fa-solid fa-check"></i> Curățenie după constructor</li>
+          <li><i class="fa-solid fa-check"></i> Spălare geamuri și vitrine</li>
+          <li><i class="fa-solid fa-check"></i> Curățenie periodică</li>
+        </ul>
+        <div class="highlight-box">
+          <i class="fa-solid fa-thumbs-up"></i> Personal instruit și echipamente profesionale
+        </div>
+        <div class="highlight-box">
+          <i class="fa-solid fa-leaf"></i> Produse ecologice
+        </div>
+        <div class="highlight-box">
+          <i class="fa-solid fa-clock"></i> Program flexibil
+        </div>
+      </div>
+      <div class="card-image">
+        <img src="/bg-idea.jpg" alt="Curățenie profesională" loading="lazy" />
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<!-- SPATII VERZI -->
+<mat-card id="spatii-verzi" class="servicii-section" data-aos="fade-up">
+  <mat-card-header>
+    <mat-card-title><i class="fa-solid fa-leaf"></i> Spații verzi</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="card-flex">
+      <div class="card-text">
+        <p>Întreținem spații verzi sănătoase și estetice, cu servicii de amenajare complete.</p>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> Însămânțări și plantări</li>
+          <li><i class="fa-solid fa-check"></i> Tuns gazon, arbori și arbuști</li>
+          <li><i class="fa-solid fa-check"></i> Sisteme de irigații automate</li>
+        </ul>
+        <div class="highlight-box">
+          <i class="fa-solid fa-seedling"></i> Îngrijire sezonieră
+        </div>
+        <div class="highlight-box">
+          <i class="fa-solid fa-tree"></i> Proiectare personalizată
+        </div>
+        <div class="highlight-box">
+          <i class="fa-solid fa-recycle"></i> Respect pentru natură
+        </div>
+      </div>
+      <div class="card-image">
+        <img src="/bg-idea.jpg" alt="Spații verzi" loading="lazy" />
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<!-- RENOVARI -->
+<mat-card id="renovari" class="servicii-section" data-aos="fade-up">
+  <mat-card-header>
+    <mat-card-title><i class="fa-solid fa-screwdriver-wrench"></i> Reparații și renovări</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="card-flex">
+      <div class="card-text">
+        <p>Oferim lucrări de renovare și reparații la standarde înalte, adaptate nevoilor tale.</p>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> Renovări interioare/exterioare</li>
+          <li><i class="fa-solid fa-check"></i> Reparații electrice și sanitare</li>
+          <li><i class="fa-solid fa-check"></i> Zugrăveli și finisaje</li>
+        </ul>
+        <div class="highlight-box">
+          <i class="fa-solid fa-hard-hat"></i> Echipe specializate
+        </div>
+        <div class="highlight-box">
+          <i class="fa-solid fa-calendar-check"></i> Respectarea termenelor
+        </div>
+        <div class="highlight-box">
+          <i class="fa-solid fa-user-gear"></i> Soluții personalizate
+        </div>
+      </div>
+      <div class="card-image">
+        <img src="/bg-idea.jpg" alt="Reparații și renovări" loading="lazy" />
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<!-- ADMINISTRARE -->
+<mat-card id="administrare" class="servicii-section" data-aos="fade-up">
+  <mat-card-header>
+    <mat-card-title><i class="fa-solid fa-building"></i> Administrare proprietăți</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="card-flex">
+      <div class="card-text">
+        <p>Administrăm eficient proprietăți rezidențiale și comerciale cu servicii integrate.</p>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> Relația cu chiriașii și contractele</li>
+          <li><i class="fa-solid fa-check"></i> Gestionare utilități și facturi</li>
+          <li><i class="fa-solid fa-check"></i> Monitorizare tehnică permanentă</li>
+        </ul>
+        <div class="highlight-box">
+          <i class="fa-solid fa-chart-line"></i> Optimizare costuri
+        </div>
+        <div class="highlight-box">
+          <i class="fa-solid fa-file-invoice"></i> Raportare transparentă
+        </div>
+        <div class="highlight-box">
+          <i class="fa-solid fa-headset"></i> Suport dedicat
+        </div>      </div>
+      <div class="card-image">
+        <img src="/bg-idea.jpg" alt="Administrare proprietăți" loading="lazy" />
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<!-- DDD -->
+<mat-card id="ddd" class="servicii-section" data-aos="fade-up">
+  <mat-card-header>
+    <mat-card-title><i class="fa-solid fa-bug"></i> Servicii DDD</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="card-flex">
+      <div class="card-text">
+        <p>Dezinsecție, deratizare și dezinfectare, realizate cu responsabilitate și eficiență.</p>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> Intervenții rapide</li>
+          <li><i class="fa-solid fa-check"></i> Substanțe omologate</li>
+          <li><i class="fa-solid fa-check"></i> Echipamente moderne</li>
+        </ul>
+        <div class="highlight-box">
+          <i class="fa-solid fa-shield-virus"></i> Norme de igienă respectate
+        </div>
+        <div class="highlight-box">
+          <i class="fa-solid fa-user-shield"></i> Siguranță garantată
+        </div>
+        <div class="highlight-box">
+          <i class="fa-solid fa-spray-can-sparkles"></i> Acțiuni certificate
+        </div>
+      </div>
+      <div class="card-image">
+        <img src="/bg-idea.jpg" alt="Servicii DDD" loading="lazy" />
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<!-- SUPORT -->
+<mat-card id="suport" class="servicii-section" data-aos="fade-up">
+  <mat-card-header>
+    <mat-card-title><i class="fa-solid fa-hands-helping"></i> Servicii suport</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="card-flex">
+      <div class="card-text">
+        <p>Suport profesional pentru întreținerea și funcționarea optimă a proprietăților tale.</p>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> Recepție și call-center</li>
+          <li><i class="fa-solid fa-check"></i> Gestionare documente</li>
+          <li><i class="fa-solid fa-check"></i> Suport autorități</li>
+        </ul>
+        <div class="highlight-box">
+          <i class="fa-solid fa-headphones"></i> Asistență dedicată
+        </div>
+        <div class="highlight-box">
+          <i class="fa-solid fa-people-group"></i> Echipe flexibile
+        </div>
+        <div class="highlight-box">
+          <i class="fa-solid fa-gears"></i> Integrare cu procesele existente
+        </div>
+      </div>
+      <div class="card-image">
+        <img src="/bg-idea.jpg" alt="Servicii suport" loading="lazy" />
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
