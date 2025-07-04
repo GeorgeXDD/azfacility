@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { AfterViewInit, Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -21,7 +22,7 @@ export class ServiciiComponent implements OnInit, AfterViewInit {
 
   currentSection = '';
 
-  constructor(private router: Router) {}
+constructor(private router: Router, @Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit() {
     AOS.init({
@@ -30,33 +31,36 @@ export class ServiciiComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngAfterViewInit() {
-    // Intersection observer
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            this.currentSection = entry.target.id;
-          }
-        });
-      },
-      { threshold: 0.4 }
-    );
+
+ngAfterViewInit() {
+  if (isPlatformBrowser(this.platformId)) {
+    AOS.init({
+      duration: 600,
+      once: true,
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.currentSection = entry.target.id;
+        }
+      });
+    }, { threshold: 0.4 });
 
     document.querySelectorAll<HTMLElement>('.servicii-section')
       .forEach(section => observer.observe(section));
 
-    // scroll to fragment on NavigationEnd
-    this.router.events.subscribe((event) => {
+    this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         const tree = this.router.parseUrl(this.router.url);
         if (tree.fragment) {
           const el = document.getElementById(tree.fragment);
           if (el) {
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            el.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
           }
         }
       }
     });
   }
+}
 }

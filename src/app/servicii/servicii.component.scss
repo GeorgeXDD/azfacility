@@ -23,10 +23,6 @@
   text-align: center;
   padding: 6rem 2rem;
 
-  .overlay {
-    display: none; // redundant cu gradient
-  }
-
   .hero-content {
     position: relative;
     z-index: 2;
@@ -39,7 +35,7 @@
       letter-spacing: -0.5px;
 
       .accent-dot {
-        color: #F9A825;
+        color: #6ebc5c;
       }
     }
     p {
@@ -50,8 +46,20 @@
   }
 }
 
+/* wave divider */
+.wave-divider {
+  width: 100%;
+  line-height: 0;
+  svg {
+    display: block;
+    width: 100%;
+    height: 100px;
+  }
+  &.flip svg {
+    transform: rotate(180deg);
+  }
+}
 
-/* SIDEBAR */
 /* SIDEBAR */
 .servicii-sidebar {
   background: #fff;
@@ -66,7 +74,6 @@
   @media (max-width: 992px) {
     position: static;
     width: 100%;
-    max-height: none;
     margin-bottom: 2rem;
   }
 
@@ -74,7 +81,7 @@
     font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    border-bottom: 2px solid #F9A825;
+    border-bottom: 2px solid #6ebc5c;
     padding-bottom: 0.5rem;
   }
 
@@ -85,10 +92,6 @@
     flex-direction: column;
     gap: 0.5rem;
 
-    @media (max-width: 992px) {
-      flex-wrap: wrap;
-    }
-
     li {
       a {
         display: block;
@@ -97,31 +100,21 @@
         text-decoration: none;
         color: #333;
         font-weight: 600;
-        transition: all 0.3s ease;
+        transition: 0.3s;
 
         &:hover {
           background: rgba(249, 168, 37, 0.1);
-          color: #F9A825;
+          color: #6ebc5c;
         }
         &.active {
           background: rgba(249, 168, 37, 0.15);
-          border-left: 4px solid #F9A825;
-          color: #F9A825;
+          border-left: 4px solid #6ebc5c;
+          color: #6ebc5c;
         }
       }
     }
   }
 }
-
-/* CONTAINER responsive fix */
-@media (max-width: 992px) {
-  .container {
-    flex-direction: column;
-    align-items: stretch;
-  }
-}
-
-
 
 /* SERVICII CONTENT */
 .servicii-content {
@@ -134,7 +127,7 @@
     background: #f5f5f5;
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s, box-shadow 0.3s;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.6s forwards;
@@ -154,7 +147,7 @@
         i {
           font-size: 1.7rem;
           margin-right: 0.8rem;
-          color: #F9A825;
+          color: #6ebc5c;
         }
       }
     }
@@ -181,11 +174,11 @@
 
           i {
             margin-right: 0.6rem;
-            color: #F9A825;
-            transition: color 0.3s ease;
+            color: #6ebc5c;
+            transition: color 0.3s;
 
             &:hover {
-              color: #ff9900;
+              color: #6ebc5c;
             }
           }
         }
@@ -196,6 +189,73 @@
       transform: scale(1.02);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
     }
+  }
+}
+
+/* highlight boxes */
+.highlight-box {
+  border-left: 4px solid #6ebc5c;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: #333;
+
+  i {
+    color: #6ebc5c;
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  &:hover {
+    background: rgba(249, 168, 37, 0.15);
+  }
+}
+
+/* call to action inside each card */
+.cta-text {
+  margin-top: 1rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #6ebc5c;
+  border-left: 4px solid #6ebc5c;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  transition: background 0.3s;
+
+  &:hover {
+    background: rgba(249, 168, 37, 0.2);
+  }
+}
+
+/* card flex */
+.card-flex {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+
+  .card-text {
+    flex: 1;
+  }
+  .card-image {
+    flex: 1;
+    img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
   }
 }
 
@@ -222,116 +282,20 @@
       font-size: 1rem;
     }
   }
-  .servicii-sidebar mat-nav-list .mat-list-item {
-    flex: 1 1 100%;
-  }
 }
 
-.servicii-section:hover {
-  transform: scale(1.02);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-  transition: all 0.4s ease;
+.section-anchor {
+  position: absolute;
+  top: -80px;
+  height: 1px;
+  width: 1px;
 }
 
+/* hover icon */
 .servicii-section i {
   transition: transform 0.3s, color 0.3s;
 }
 .servicii-section i:hover {
   transform: scale(1.1);
-  color: #ff9900;
-}
-
-.card-flex {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  align-items: center;
-
-  .card-text {
-    flex: 1;
-  }
-
-  .card-image {
-    flex: 1;
-    img {
-      width: 100%;
-      border-radius: 8px;
-      object-fit: cover;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-
-      &:hover {
-        transform: scale(1.02);
-      }
-    }
-  }
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-
-    .card-image {
-      width: 100%;
-      margin-top: 1rem;
-    }
-  }
-}
-
-.section-anchor {
-  position: absolute;
-  top: -80px; /* compensează sticky header */
-  height: 1px;
-  width: 1px;
-}
-
-/* highlight boxes */
-.highlight-box {
-  //background: rgba(249, 168, 37, 0.1);
-  border-left: 4px solid #F9A825;
-  border-radius: 8px;
-  padding: 0.75rem 1rem;
-  margin: 1rem 0;
-  display: flex;
-  align-items: center;
-  font-weight: 600;
-  color: #333;
-
-  i {
-    color: #F9A825;
-    margin-right: 0.5rem;
-    font-size: 1.2rem;
-  }
-
-  &:hover {
-    background: rgba(249, 168, 37, 0.2);
-    cursor: default;
-  }
-}
-
-/* call to action inside each card */
-.cta-text {
-  margin-top: 1rem;
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: #F9A825;
- /// background: rgba(249, 168, 37, 0.08);
-  border-left: 4px solid #F9A825;
-  border-radius: 6px;
-  padding: 0.75rem 1rem;
-  transition: background 0.3s;
-
-  &:hover {
-    background: rgba(249, 168, 37, 0.2);
-  }
-}
-
-/* responsive for highlights if needed */
-@media (max-width: 768px) {
-  .highlight-box {
-    flex-direction: column;
-    align-items: flex-start;
-
-    i {
-      margin-bottom: 0.4rem;
-    }
-  }
+  color: #6ebc5c;
 }
