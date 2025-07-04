@@ -20,8 +20,8 @@
   .hero-content {
     position: relative;
     z-index: 2;
-    h1 { font-size: 3rem; line-height:1.2; margin:0; }
-    .accent-dot { color:#5ca9bc; }
+    h1 { font-size: 4rem; line-height:1.2; margin:0; }
+    .accent-dot { color:#6ebc5c; }
     p  { margin-top:0.5rem; }
   }
 
@@ -35,7 +35,7 @@
   .services {
     position: relative;
     z-index: 2;
-    margin-top: 2rem;
+    margin-top: 7rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 1.5rem;
@@ -53,13 +53,13 @@
     border-radius: 1.5rem;  
 
     &:hover {
-      border-color: #5ca9bc;
-      h5 { color: #5ca9bc }
+      border-color: #6ebc5c;
+      h5 { color: #6ebc5c }
     }
 
     i {
       font-size: 2rem;
-      color: #5ca9bc;
+      color: #6ebc5c;
       margin-bottom: 1rem;
     }
     h5 {
@@ -99,7 +99,7 @@
     display: block;
     width: 50px;
     height: 4px;
-    background: #5ca9bc;
+    background: #6ebc5c;
     margin: 0.5rem auto 0;
   }
 }
@@ -189,9 +189,9 @@
       margin-top: 1rem;
       i {
         font-size: 2rem;
-        color: #5ca9bc !important;
+        color: #6ebc5c !important;
       }
-      color: #5ca9bc !important
+      color: #6ebc5c !important
     }
 
     mat-card-title {
@@ -217,7 +217,7 @@
 
 /* 3) Principale servicii */
 .main-services-alt {
-  background: #5ca9bc;
+  background: #6ebc5c;
   padding: 4rem 0;
 
   .section-title {
@@ -397,7 +397,7 @@ background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     .desc-list {
       li {
         color: #fff;
-        &::before { color: #5ca9bc; }  // keep your bullets yellow
+        &::before { color: #6ebc5c; }  // keep your bullets yellow
       }
     }
   }
@@ -406,7 +406,7 @@ background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 
 /* 5) Tipuri de proprietăți */
 .property-types {
-  background: #5ca9bc;
+  background: #6ebc5c;
   padding: 4rem 0;
   color: #fff;
 
@@ -512,9 +512,9 @@ background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   button[mat-button] {
     padding: 1.5rem 1.5rem;
     border-radius: 2em;
-    border-color: #5ca9bc;
+    border-color: #6ebc5c;
     color: #ffffff;
-    background: #5ca9bc;
+    background: #6ebc5c;
     &:hover {
       background: rgba(55, 185, 255, 0.171);
     }

@@ -40,19 +40,19 @@ export class HomeComponent implements AfterViewInit {
     },
     {
       icon: 'fas fa-hammer',
-      title: 'Întreținere și Reparații'
+      title: 'Reparații și Renovări'
     },
     {
       icon: 'fas fa-broom',
       title: 'Servicii de Curățenie'
     },
     {
-      icon: 'fas fa-shield-halved',
-      title: 'Pază și Supraveghere'
-    },
-    {
       icon: 'fas fa-seedling',
-      title: 'Întreținerea și Amenajarea Spațiilor Verzi'
+      title: 'Amenajarea și Întreținerea Spațiilor Verzi'
+    },
+        {
+      icon: 'fas fa-shield-halved',
+      title: 'Servicii suport'
     }
   ];
 
@@ -116,8 +116,8 @@ export class HomeComponent implements AfterViewInit {
     {
       img: 'big-image.jpg',
       iconClass: 'fa-solid fa-rocket fa-lg text-warning',
-      title: 'Intervenții rapide',
-      text: 'Intervenții rapide, eficiență și profesionalism constant'
+      title: 'Calitate',
+      text: 'Eficiență și profesionalism constant'
     },
     {
       img: 'big-image.jpg',

@@ -18,7 +18,8 @@
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 32px;
-  background: #5ca9bc !important;
+  // background: #6ebc5c !important;
+  background: transparent !important;
   z-index: 15;
 
   .inner {
@@ -31,7 +32,7 @@
     display: flex;
     align-items: center;
     color: #fff;
-    font-size: 0.85rem;
+    font-size: 1.3rem;
 
     i {
       margin-right: 0.5rem;
@@ -58,7 +59,7 @@
   .navbar-brand {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
-    font-size: 2.5rem;
+    font-size: 5rem;
     color: #fff !important;
     margin-right: 2rem;
     padding-left: 15rem; 
@@ -131,11 +132,12 @@
 }
 
 .test {
+  margin-left: 10rem;
     button{
         color: white;
         font-family: 'Roboto', sans-serif;
         font-weight: 600;
-        font-size:x-large;
+        font-size: 1.3rem;
     }
     button[mat-button] {
     border-color: #5ca9bc;
@@ -146,7 +148,7 @@
     }
   }
 }
-.accent-dot { color:#5ca9bc; }
+.accent-dot { color:#6ebc5c; }
 
 /* Footer */
 .footer {
@@ -193,7 +195,7 @@
 
           i {
             margin-right: 0.5rem;
-            color: #5ca9bc;
+            color: #6ebc5c;
           }
 
           a {
@@ -202,7 +204,7 @@
             transition: color 0.2s;
 
             &:hover {
-              color: #5ca9bc;
+              color: #6ebc5c;
             }
           }
         }
