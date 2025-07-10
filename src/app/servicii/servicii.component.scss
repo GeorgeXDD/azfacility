@@ -12,6 +12,26 @@
   }
 }
 
+.section-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+  position: relative;
+  display: block;
+  margin: 0 auto 1rem;
+  width: 70%;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 9em;
+    height: 0.15em;
+    background: #6ebc5c;
+    margin: 0.5rem auto 0;
+  }
+}
+
 /* HERO */
 .servici-hero {
   background: linear-gradient(
@@ -30,6 +50,7 @@
     margin: 0 auto;
 
     h1 {
+      margin-top: 5rem;
       font-size: 2.8rem;
       font-weight: 800;
       letter-spacing: -0.5px;

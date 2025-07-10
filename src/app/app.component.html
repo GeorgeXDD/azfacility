@@ -27,44 +27,6 @@
       >
         Servicii
       </button>
-      <div class="mobile-submenu">
-        <button
-          mat-button
-          class="submenu-item"
-          [routerLink]="['/servicii']"
-          fragment="curatenie"
-          (click)="drawer.close()"
-        >
-          – Curățenie
-        </button>
-        <button
-          mat-button
-          class="submenu-item"
-          [routerLink]="['/servicii']"
-          fragment="spatii-verzi"
-          (click)="drawer.close()"
-        >
-          – Spații verzi
-        </button>
-        <button
-          mat-button
-          class="submenu-item"
-          [routerLink]="['/servicii']"
-          fragment="renovari"
-          (click)="drawer.close()"
-        >
-          – Reparații și renovări
-        </button>
-        <button
-          mat-button
-          class="submenu-item"
-          [routerLink]="['/servicii']"
-          fragment="management-proprietati"
-          (click)="drawer.close()"
-        >
-          – Management proprietăți
-        </button>
-      </div>
 
       <button
         mat-button
@@ -89,18 +51,18 @@
     <!-- Top info bar (desktop only) -->
     <div class="top-bar d-none d-md-flex">
       <div class="inner">
-        <span class="info-item">
+        <a class="info-item" href="mailto:contact@gp.com">
           <i class="fa-solid fa-envelope"></i>
           contact&#64;gp.com
-        </span>
-        <span class="info-item">
+        </a>
+        <a class="info-item" href="tel:+40123456789">
           <i class="fa-solid fa-phone"></i>
           +40 123 456 789
-        </span>
-        <span class="info-item">
+        </a>
+        <a class="info-item" href="tel:+40123456789">
           <i class="fa-solid fa-phone"></i>
           +40 123 456 789
-        </span>
+        </a>
       </div>
     </div>
 
@@ -137,8 +99,7 @@
         <button
           mat-button
           [matMenuTriggerFor]="serviciiMenu"
-          routerLink="/servicii"
-          routerLinkActive="active"
+          [class.active]="isServiciiActive()"
         >
           Servicii
         </button>
