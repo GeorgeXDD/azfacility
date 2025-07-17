@@ -26,7 +26,7 @@ import { filter } from 'rxjs';
 export class AppComponent {
   title = 'AZFacility';
   currentUrl: string = '';
-  private router = inject(Router); // ✅ fix: inject Router manually
+  private router = inject(Router);
 
   constructor() {
     this.router.events.pipe(

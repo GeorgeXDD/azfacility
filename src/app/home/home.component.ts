@@ -102,25 +102,25 @@ export class HomeComponent implements AfterViewInit {
 
   features = [
     {
-      img: 'big-image.jpg',
+      img: 'home-page/stergere-telecomanda.jpg',
       iconClass: 'fa-solid fa-seedling fa-lg text-warning',
       title: 'Management complet',
       text: 'Management complet al proprietății tale, de la A la Z'
     },
     {
-      img: 'big-image.jpg',
+      img: 'home-page/curat-tv.jpg',
       iconClass: 'fa-solid fa-chart-simple fa-lg text-warning',
       title: 'Optimizare costuri',
       text: 'Optimizați costurile și resursele, fără compromisuri'
     },
     {
-      img: 'big-image.jpg',
+      img: 'home-page/curat-podea.jpg',
       iconClass: 'fa-solid fa-rocket fa-lg text-warning',
       title: 'Calitate',
       text: 'Eficiență și profesionalism constant'
     },
     {
-      img: 'big-image.jpg',
+      img: 'home-page/curat-masa.jpg',
       iconClass: 'fa-solid fa-lock fa-lg text-warning',
       title: 'Siguranță & confort',
       text: 'Siguranță și confort pentru tine și chiriași'
@@ -129,27 +129,27 @@ export class HomeComponent implements AfterViewInit {
 
   mainServices = [
     {
-      img: 'big-image.jpg',
+      img: 'home-page/aparatura-curatenie.jpg',
       title: 'Administrare zilnică',
       desc: 'Preluăm toate sarcinile zilnice – contracte de închiriere, facturare utilităţi şi relaţia cu chiriaşii – ca tu să te concentrezi pe obiectivele tale.'
     },
     {
-      img: 'big-image-bw.png',
+      img: 'home-page/aparatura-curatenie.jpg',
       title: 'Întreținere și Reparații',
       desc: 'Monitorizăm preventiv instalaţiile (electrice, sanitare, HVAC) și intervenim prompt la orice defecţiune pentru a evita costuri suplimentare.'
     },
     {
-      img: 'big-image.jpg',
+      img: 'home-page/aparatura-curatenie.jpg',
       title: 'Servicii de Curățenie',
       desc: 'Asigurăm curățenie zilnică, periodică sau post-construcție în birouri, apartamente, spații comerciale și întreţinerea spaţiilor verzi.'
     },
     {
-      img: 'big-image-bw.png',
+      img: 'home-page/aparatura-curatenie.jpg',
       title: 'Pază și Supraveghere',
       desc: 'Oferim soluţii integrate de supraveghere video și pază fizică pentru protecţia completă a proprietăţii tale.'
     },
     {
-      img: 'big-image.jpg',
+      img: 'home-page/aparatura-curatenie.jpg',
       title: 'Amenajare Spații Verzi',
       desc: 'Creăm și întreținem grădini, parcuri și zone verzi care îmbină estetica cu funcționalitatea.'
     }
@@ -163,7 +163,7 @@ export class HomeComponent implements AfterViewInit {
         { icon: 'fa-solid fa-percent',           text: 'Planuri personalizate de reducere a costurilor' },
         { icon: 'fa-solid fa-file-invoice-dollar', text: 'Raportări transparente și consultanță continuă' }
       ],
-      img: 'about1.jpg'
+      img: 'home-page/cost-optimization.jpg'
     },
     {
       title: 'Servicii la timp',
@@ -172,7 +172,7 @@ export class HomeComponent implements AfterViewInit {
         { icon: 'fa-solid fa-calendar-alt',   text: 'Calendar digital de mentenanță programată' },
         { icon: 'fa-solid fa-bell',           text: 'Alertare instantă pentru orice urgență' }
       ],
-      img: 'about2.jpg'
+      img: 'home-page/servicii-timp.jpg'
     },
     {
       title: 'Transparență totală',
@@ -181,26 +181,40 @@ export class HomeComponent implements AfterViewInit {
         { icon: 'fa-solid fa-tachometer-alt',   text: 'Dashboard în timp real cu performanțele proprietății' },
         { icon: 'fa-solid fa-comments',         text: 'Comunicare directă cu managerii de proiect' }
       ],
-      img: 'values.jpg'
+      img: 'home-page/aparatura-curatenie.jpg'
     }
   ];
 
   propertyTypes = [
     {
       iconClass: 'fa-solid fa-building',
-      title: 'Clădiri de birouri & business center'
+      title: 'Clădiri de birouri & business center',
+      img: 'home-page/cladiri-birouri.jpg'
     },
     {
       iconClass: 'fa-solid fa-shop',
-      title: 'Spații comerciale & mall-uri'
+      title: 'Spații comerciale & mall-uri',
+      img: 'home-page/mall-cleaning.jpg'
     },
     {
       iconClass: 'fa-solid fa-house',
-      title: 'Ansambluri rezidențiale & apartamente'
+      title: 'Ansambluri rezidențiale & apartamente',
+      img: 'home-page/rezidentiale.jpg'
     },
     {
       iconClass: 'fa-solid fa-industry',
-      title: 'Spații industriale & logistice'
+      title: 'Spații industriale & logistice',
+      img: 'home-page/industrial-cleaning.jpg'
+    },
+        {
+      iconClass: 'fa-solid fa-industry',
+      title: 'Spații industriale & logistice',
+      img: 'home-page/rezidentiale.jpg'
+    },
+        {
+      iconClass: 'fa-solid fa-industry',
+      title: 'Spații industriale & logistice',
+      img: 'home-page/rezidentiale.jpg'
     }
   ];
 }

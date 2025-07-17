@@ -1,6 +1,5 @@
 .hero {
   position: relative;
-  background: url('/bg-idea.jpg') center/cover no-repeat;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -15,6 +14,15 @@
     inset: 0;
     background: rgba(0,0,0,0.4);
     z-index: 1;
+  }
+
+    .hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
   }
 
   .hero-content {
@@ -160,8 +168,11 @@
 
 /* Mobile tweaks */
 @media (max-width: 600px) {
-  .hero-content h1 span { font-size: 3rem; }
-  .hero-content p  { font-size: 1rem; }
+  .hero{
+    padding-bottom: 2rem;
+  }
+  .hero-content h1 span { font-size: 5rem; }
+  .hero-content p  { font-size: 2rem; }
   .services { gap: 1rem; }
 }
 
@@ -422,7 +433,7 @@ background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
           /* dacă aveai ::before, comentează-l */
           padding-left: 0;
            i {
-              color: #5ca9bc;
+              color: #6ebc5c;
               font-size: 1.25rem;
               margin-right: 0.5rem;
             }
@@ -501,13 +512,13 @@ background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   .prop-layout {
     display: flex;
     align-items: flex-start;
-    gap: 2rem;
+    // gap: 2rem;
     margin-top: 2rem;
 
     // left column (title + grid)
     .prop-left {
       margin-left: 3em;
-      flex: 0 0 55%;
+      flex: 0 0 60%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -523,15 +534,16 @@ background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
       .prop-grid {
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
       }
     }
 
     // right column (call-out)
     .prop-callout {
+      margin-top: 8rem;
       margin-right: 13em;
-      flex: 0 0 39%;
+      flex: 0 0 35%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -548,32 +560,67 @@ background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   }
 
   .prop-card {
-    background: #fff;
-    color: #444;
+    padding: 0;
+    overflow: hidden;
     border-radius: 8px;
-    text-align: center;
-    padding: 1.5rem 1rem;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.4s ease;
+    &:hover { transform: scale(1.05); }
+
+    .prop-image {
+      position: relative;
+      width: 100%;
+      height: 250px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        transition: opacity 0.4s ease;
+        z-index: 1;
+      }
+
+      .card-text {
+        position: relative;
+        color: white;
+        font-size: 1.6rem;
+        font-weight: 700;
+        z-index: 2;
+        text-align: center;
+        padding: 1rem;
+      }
+    }
 
     &:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    }
+      .overlay {
+        opacity: 0;
+      }
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 
-    .card-icon i {
-      color: #6ebc5c !important;
     }
+  }
 
-    mat-card-content p {
-      margin: 0;
-      font-weight: 500;
-      line-height: 1.4;
-    }
+  .prop-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 30%, rgba(68, 121, 70, 0.522));
+    transition: opacity 0.3s;
   }
 
   // responsive: stack under each other on narrow screens
   @media (max-width: 768px) {
+    .prop-grid {
+      margin-left: -10% !important;
+      width: 90% !important;
+      grid-template-columns: repeat(1, 1fr) !important;  // single column
+    } 
+
     .prop-layout {
       flex-direction: column;
 
@@ -583,9 +630,10 @@ background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
       }
 
       .prop-callout {
+        margin-left: 7rem;
         margin-top: 2rem;
         p {
-          font-size: 2rem;
+          font-size: 3rem;
         }
       }
     }

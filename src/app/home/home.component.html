@@ -1,4 +1,7 @@
 <div class="hero">
+  <video autoplay muted loop playsinline preload="auto" class="hero-video">
+    <source src="/home-page/main-video.mp4" type="video/mp4" />
+  </video>
   <div class="hero-content">
     <h1>
       <!-- AZ<span class="accent-dot">.</span> Facility<br /> -->
@@ -166,18 +169,13 @@
           Ce tipuri de proprietăți administrăm?
         </h2>
         <div class="prop-grid">
-          <mat-card
-            class="prop-card"
-            *ngFor="let p of propertyTypes; let i = index"
-            data-aos="flip-up"
-            [attr.data-aos-delay]="100 + i * 100"
-          >
-            <div class="card-icon">
-              <i [class]="p.iconClass + ' fa-2x text-warning'"></i>
+          <mat-card class="prop-card" *ngFor="let p of propertyTypes">
+            <div class="prop-image" [ngStyle]="{ 'background-image': 'url(' + p.img + ')' }">
+              <div class="overlay"></div>
+              <div class="card-text">
+                <p>{{ p.title }}</p>
+              </div>
             </div>
-            <mat-card-content>
-              <p>{{ p.title }}</p>
-            </mat-card-content>
           </mat-card>
         </div>
       </div>
