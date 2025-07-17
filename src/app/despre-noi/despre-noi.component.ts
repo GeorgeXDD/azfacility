@@ -83,25 +83,15 @@ export class DespreNoiComponent {
   ];
 
 
-// values‐section data
-valuesTitle    = 'Valorile noastre';
-valuesSubtitle = 'La baza activității noastre stau câteva principii clare, care ne ghidează în fiecare colaborare:';
-valuesList     = [
-  { label: 'Profesionalism',    text: 'Livrăm servicii corecte, bine făcute, la timp.' },
-  { label: 'Transparență',      text: 'Comunicăm deschis și ținem clienții informați la fiecare pas.' },
-  { label: 'Flexibilitate',     text: 'Ne adaptăm la nevoile fiecărui client, indiferent de dimensiunea sau tipul proprietății.' },
-  { label: 'Responsabilitate',  text: 'Tratăm fiecare proprietate ca și cum ar fi a noastră.' },
-  { label: 'Sustenabilitate',   text: 'Luăm decizii care protejează mediul și resursele, pentru un viitor mai curat.' },
-];
-valuesImg       = 'values.jpg';
-
-serviceItems: ServiceItem[] = [
-  { icon: 'building', title: 'Administrare', desc: 'Contracte, plăți, chiriași.' },
-  { icon: 'hammer',   title: 'Reparații', desc: 'Intervenții tehnice și mentenanță.' },
-  { icon: 'broom',    title: 'Curățenie', desc: 'Spații impecabile, fără stres.' },
-  { icon: 'bolt',     title: 'Utilități', desc: 'Indexuri, facturi, furnizori.' },
-  { icon: 'gavel',    title: 'Legal',     desc: 'Acte, contracte, autorități.' },
-  { icon: 'leaf',     title: 'Eco',       desc: 'Produse și practici sustenabile.' }
-];
-
+  // values‐section data
+  valuesTitle    = 'Valorile noastre';
+  valuesSubtitle = 'La baza activității noastre stau câteva principii clare, care ne ghidează în fiecare colaborare:';
+  valuesList     = [
+    { label: 'Profesionalism',    text: 'Livrăm servicii corecte, bine făcute, la timp.' },
+    { label: 'Transparență',      text: 'Comunicăm deschis și ținem clienții informați la fiecare pas.' },
+    { label: 'Flexibilitate',     text: 'Ne adaptăm la nevoile fiecărui client, indiferent de dimensiunea sau tipul proprietății.' },
+    { label: 'Responsabilitate',  text: 'Tratăm fiecare proprietate ca și cum ar fi a noastră.' },
+    { label: 'Sustenabilitate',   text: 'Luăm decizii care protejează mediul și resursele, pentru un viitor mai curat.' },
+  ];
+  valuesImg       = 'values.jpg';
 }

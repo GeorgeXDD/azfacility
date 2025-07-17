@@ -54,10 +54,15 @@ ngAfterViewInit() {
       if (event instanceof NavigationEnd) {
         const tree = this.router.parseUrl(this.router.url);
         if (tree.fragment) {
-          const el = document.getElementById(tree.fragment);
-          if (el) {
-            el.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-          }
+          setTimeout(() => {
+            if (tree.fragment) {
+              const el = document.getElementById(tree.fragment);
+              if (el) {
+                el.scrollIntoView({ behavior: 'auto', block: 'start', inline: 'nearest' });
+                this.currentSection = tree.fragment;
+              }
+            }
+          }, 50);
         }
       }
     });

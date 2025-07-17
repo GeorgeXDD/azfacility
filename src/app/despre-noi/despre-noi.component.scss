@@ -62,7 +62,7 @@
 .section-title {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 1.6rem;
   text-align: center;
   position: relative;
   display: block;
@@ -112,6 +112,36 @@
     }
   }
 
+  .about-intro {
+    padding: 4rem 0;
+    background: #ffffff;
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .section-title {
+      margin-bottom: 1.5rem;
+    }
+
+    .intro-text {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #444;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      padding: 2rem 1rem;
+      .intro-text {
+        font-size: 1rem;
+      }
+    }
+  }
+
 
   /* Alternating detail blocks */
   .about-details {
@@ -119,7 +149,7 @@
     
 
     .container {
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 0 auto;
       display: grid;
       gap: 2.5rem;
@@ -172,167 +202,94 @@
         &.reverse { direction: ltr; }
       }
     }
-
-    
   }
 
-  /* Services grid section */
-  .services-list {
+
+/* 3) Values Section */
+  .values-section {
     padding: 4rem 0;
-    background: #f9f9f9;
+    background: #fff;
 
     .container {
-      max-width: 1000px;
+      max-width: 1200px;
+      padding: 0 2rem;
       margin: 0 auto;
-      text-align: center;
     }
 
-    .section-title {
-      font-family: 'Roboto', sans-serif;
-      font-weight: 700;
-      margin-bottom: 2rem;
-      position: relative;
-
-      &::after {
-        content: '';
-        display: block;
-        width: 60px;
-        height: 4px;
-        background: #6ebc5c;
-        margin: 0.5rem auto 0;
-      }
-    }
-
-    .grid {
+    .values-grid {
       display: grid;
-      /* always 3 columns */
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
 
-      @media (max-width: 900px) {
-        /* tablets: 2 per row */
-        grid-template-columns: repeat(2, 1fr);
+    .values-content {
+      .section-title {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+
+        &::after {
+          content: '';
+          display: block;
+          width: 60px;
+          height: 4px;
+          background: #6ebc5c;
+          margin-top: 0.5rem;
+        }
       }
-      @media (max-width: 600px) {
-        /* phones: 1 per row */
+
+      .subtitle {
+        font-style: italic;
+        color: #555;
+        margin-bottom: 1.5rem;
+        font-size: 1.05rem;
+      }
+
+      .values-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 1rem;
+
+        li {
+          display: flex;
+          align-items: flex-start;
+          color: #222;
+          line-height: 1.6;
+
+          .check-icon {
+            color: #6ebc5c;
+            margin-right: 0.75rem;
+            margin-top: 0.2rem;
+            font-size: 1.2rem;
+          }
+
+          strong {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    .values-image {
+      height: 450px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 768px) {
+      .values-grid {
         grid-template-columns: 1fr;
       }
-    }
-
-    .card {
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-      i {
-        font-size: 2rem;
-        color: #6ebc5c;
-        margin-bottom: 0.5rem;
-        display: block;
-      }
-
-      h4 {
-        font-weight: 600;
-        margin: 0.5rem 0;
-      }
-
-      p {
-        color: #555;
-        font-size: 0.9rem;
-      }
-
-      &:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      .values-image {
+        height: 200px;
+        margin-top: 2rem;
       }
     }
   }
-/* 3) Values Section */
-.values-section {
-  padding: 4rem 0;
-  background: #fff;
-
-  .container {
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  .values-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
-  }
-
-  .values-content {
-    .section-title {
-      font-family: 'Roboto', sans-serif;
-      font-weight: 700;
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-
-      &::after {
-        content: '';
-        display: block;
-        width: 60px;
-        height: 4px;
-        background: #6ebc5c;
-        margin-top: 0.5rem;
-      }
-    }
-
-    .subtitle {
-      font-style: italic;
-      color: #555;
-      margin-bottom: 1.5rem;
-      font-size: 1.05rem;
-    }
-
-    .values-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      gap: 1rem;
-
-      li {
-        display: flex;
-        align-items: flex-start;
-        color: #222;
-        line-height: 1.6;
-
-        .check-icon {
-          color: #6ebc5c;
-          margin-right: 0.75rem;
-          margin-top: 0.2rem;
-          font-size: 1.2rem;
-        }
-
-        strong {
-          font-weight: 600;
-        }
-      }
-    }
-  }
-
-  .values-image {
-    height: 450px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 6px;
-  }
-
-  @media (max-width: 768px) {
-    .values-grid {
-      grid-template-columns: 1fr;
-    }
-    .values-image {
-      height: 200px;
-      margin-top: 2rem;
-    }
-  }
-}
 
 }

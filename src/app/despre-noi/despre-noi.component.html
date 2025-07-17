@@ -12,6 +12,17 @@
   </svg>
 </div>
 
+<section class="about-intro">
+<div class="container">
+  <h2 class="section-title">Cine suntem?</h2>
+  <p class="intro-text">
+    Suntem o companie specializată în administrarea completă a clădirilor rezidențiale și nerezidențiale.
+    Ne ocupăm de tot ce ține de buna funcționare a unui imobil, menținând standarde ridicate de funcționare și confort,
+    transformând fiecare proprietate într-o investiție profitabilă, bine întreținută și corect administrată.
+  </p>
+</div>
+</section>
+
   <p class="section-title" data-aos="fade-up" data-aos-delay="100">
     Suntem dedicați transformării proprietăților în spații funcționale, sigure și eficiente, prin servicii integrate de top.
   </p>
@@ -64,22 +75,6 @@
         class="values-image"
         [ngStyle]="{ 'background-image': 'url(' + valuesImg + ')' }"
       ></div>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- Services grid section (FontAwesome) -->
-<section class="services-list">
-  <div class="container">
-    <h2 class="section-title">Serviciile noastre</h2>
-    <div class="grid">
-      <div *ngFor="let s of serviceItems" class="card">
-        <i [ngClass]="'fa-solid fa-' + s.icon"></i>
-        <h4>{{ s.title }}</h4>
-        <p>{{ s.desc }}</p>
-      </div>
     </div>
   </div>
 </section>
