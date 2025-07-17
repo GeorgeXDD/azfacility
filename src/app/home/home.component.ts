@@ -24,6 +24,7 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class HomeComponent implements AfterViewInit {
 
+  @ViewChild('heroVideo') heroVideo!: ElementRef<HTMLVideoElement>;
   @ViewChild('viewport', { static: false }) viewport!: ElementRef<HTMLDivElement>;
   @ViewChildren('card') cards!: QueryList<ElementRef<HTMLElement>>;
 
@@ -63,6 +64,16 @@ export class HomeComponent implements AfterViewInit {
       AOS.refresh();
 
       this.autoPlayId = setInterval(() => this.next(), 5000);
+    }
+    if (isPlatformBrowser(this.platformId) && this.heroVideo) {
+      const video = this.heroVideo.nativeElement;
+
+      video.muted = true; 
+      video.playsInline = true;
+
+      video.play().catch(err => {
+        console.warn('Video play() failed:', err);
+      });
     }
   }
 
