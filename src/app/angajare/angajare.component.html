@@ -4,3 +4,90 @@
     <h1>Cariere<span class="accent-dot">.</span></h1>
   </div>
 </section>
+
+
+<!-- wave divider top -->
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+    <path fill="#6ebc5c" d="M0,30 C400,100 1000,0 1440,50 L1440 0 L0 0 Z"></path>
+  </svg>
+</div>
+
+
+<section class="join-us-section centered-version">
+  <div class="container join-us-content">
+    <h1>Alătură-te Echipei Noastre!</h1>
+    <p class="intro">
+      Căutăm oameni motivați, pasionați și dedicați pentru a se alătura echipei noastre. Dacă îți dorești să lucrezi într-un mediu dinamic, într-o companie care pune accent pe dezvoltare profesională și pe munca în echipă, avem locul potrivit pentru tine!
+    </p>
+
+    <div class="join-us-cards">
+      <div class="info-card">
+        <h3>Ce căutăm:</h3>
+        <ul>
+          <li>Profesionalism și responsabilitate</li>
+          <li>Abilități de comunicare și colaborare</li>
+          <li>Flexibilitate și dorința de a învăța</li>
+          <li>Experiență în domenii relevante</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h3>Ce îți oferim:</h3>
+        <ul>
+          <li>Oportunități de dezvoltare profesională</li>
+          <li>Traininguri și suport continuu</li>
+          <li>Mediu de lucru plăcut</li>
+          <li>Pachet salarial competitiv</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="apply-info">
+      <p>Trimite-ne CV-ul tău la <strong>[email]</strong> sau aplică direct prin formularul de pe site. Suntem nerăbdători să te cunoaștem!</p>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="available-positions-section two-columns">
+  <div class="background-decor">
+    <div class="slanted-bar"></div>
+  </div>
+  <div class="section-header">
+    <h1> Ce posturi sunt disponibile?</h1>
+    <p>Personal căutat în cadrul echipei NovoClass</p>
+  </div>
+
+  <div class="positions-columns">
+    <div class="positions-timeline">
+      <div class="timeline-item" *ngFor="let position of firstColumn">
+        <div class="timeline-icon"></div>
+        <div class="timeline-content">
+          <h3>{{ position.title }}</h3>
+          <p>{{ position.description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="positions-timeline">
+      <div class="timeline-item" *ngFor="let position of secondColumn">
+        <div class="timeline-icon"></div>
+        <div class="timeline-content">
+          <h3>{{ position.title }}</h3>
+          <p>{{ position.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="cta-final py-5 text-center">
+  <div class="container">
+    <h2 class="section-title mb-3">Vrei sa faci parte din echipa noastra?</h2>
+    <p class="mb-4">AZFacility recruteaza in mod activ personal pentru pozitiile mentionate anterior.</p>
+    <button mat-button color="warning">Contactează-ne acum</button>
+  </div>
+</section>

@@ -32,3 +32,241 @@
     }
   }
 }
+
+/* wave divider */
+.wave-divider {
+  width: 100%;
+  line-height: 0;
+  svg {
+    display: block;
+    width: 100%;
+    height: 100px;
+  }
+  &.flip svg {
+    transform: rotate(180deg);
+  }
+}
+
+$primary-green: #6ebc5c;
+$background-light: #f5f9f5;
+$text-color: #333;
+
+// Locuri de munca section
+.join-us-section.centered-version {
+  background: #f5f9f5;
+  padding: 4rem 2rem;
+  text-align: center;
+
+  .join-us-content {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    h1 {
+      color: $primary-green;
+      margin-bottom: 1rem;
+      font-weight: 800;
+      font-size: 2.5rem;
+    }
+
+    .intro {
+      margin-bottom: 2rem;
+      color: $text-color;
+    }
+
+    .join-us-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+
+      .info-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        flex: 1 1 280px;
+        max-width: 550px;
+
+        h3 {
+          color: $primary-green;
+          margin-bottom: 1rem;
+          font-weight: 700;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+
+          li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+
+            &::before {
+              content: '✔';
+              color: $primary-green;
+              position: absolute;
+              left: 0;
+              top: 0;
+            }
+          }
+        }
+      }
+    }
+    .apply-info {
+      background: $primary-green;
+      color: white;
+      padding: 1rem;
+      border-radius: 0.75rem;
+      font-weight: 600;
+    }
+  }
+}
+
+
+// Background decor for careers section
+.cta-final {
+  background: #222;
+  color: #fff;
+  .section-title::after { background: #fff; }
+  button[mat-button] {
+    padding: 1.5rem 1.5rem;
+    border-radius: 2em;
+    border-color: #6ebc5c;
+    color: #ffffff;
+    background: #6ebc5c;
+    &:hover {
+      background: rgba(55, 255, 65, 0.171);
+    }
+  }
+}
+
+
+// Pozitii disponibile
+.available-positions-section {
+  position: relative;
+  padding: 4rem 2rem;
+
+  .background-decor {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+
+    .shape {
+      position: absolute;
+      background: $primary-green;
+      opacity: 0.15;
+      border-radius: 50%;
+      filter: blur(40px);
+    }
+
+    .slanted-bar {
+      position: absolute;
+      width: 150%;
+      height: 300px;
+      background: linear-gradient(90deg, rgba(110, 188, 92, 0.2), rgba(110, 188, 92, 0.1));
+      transform: rotate(-8deg);
+      top: 200px;
+      left: -25%;
+      z-index: -1;
+    }
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: $primary-green;
+    }
+
+    p {
+      color: $text-color;
+      opacity: 0.8;
+    }
+  }
+
+  .positions-timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    backdrop-filter: blur(4px);
+    border-radius: 1rem;
+    padding: 2rem;
+    border-left: 3px solid $primary-green;
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+
+      .timeline-icon {
+        position: absolute;
+        left: -1.2rem;
+        top: 0.4rem;
+        width: 1rem;
+        height: 1rem;
+        background: $primary-green;
+        border-radius: 50%;
+      }
+
+      .timeline-content {
+        background: white;
+        padding: 1rem 1.5rem;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-3px);
+        }
+
+        h3 {
+          margin: 0;
+          font-size: 1.2rem;
+          font-weight: 700;
+          color: $primary-green;
+        }
+
+        p {
+          margin: 0.5rem 0 0;
+          color: $text-color;
+        }
+      }
+    }
+  }
+}
+
+.available-positions-section.two-columns {
+  .positions-columns {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  .positions-timeline {
+    flex: 1;
+    padding-left: 2rem;
+    border-left: 3px solid $primary-green;
+
+    .timeline-item {
+      margin-bottom: 2rem;
+
+      .timeline-icon {
+        left: -1.2rem;
+      }
+    }
+  }
+}
