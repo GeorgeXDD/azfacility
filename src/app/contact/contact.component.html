@@ -1,6 +1,84 @@
-
 <section class="hero servici-hero" role="banner" aria-label="Prezentare servicii">
   <div class="hero-content">
     <h1>Contact<span class="accent-dot">.</span></h1>
+    <p>Suntem doar la un mesaj distanță.</p>
   </div>
 </section>
+
+<section class="contact-cards">
+  <div class="inner">
+    <a class="contact-card" href="mailto:contact@az.com">
+      <i class="fa-solid fa-envelope"></i>
+      <h3>contact<span>&#64;</span>az.com</h3>
+      <p>Scrie-ne oricând, îți vom răspunde rapid.</p>
+    </a>
+
+    <a class="contact-card" href="tel:+40123456789">
+      <i class="fa-solid fa-phone"></i>
+      <h3>+40 123 456 789</h3>
+      <p>Sună-ne pentru mai multe informații.</p>
+    </a>
+
+    <div class="contact-card">
+      <i class="fa-solid fa-location-dot"></i>
+      <h3>București, Str. Exemplu 123</h3>
+      <p>Ne găsești fizic la acest sediu.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="contact-form-section">
+  <div class="inner">
+    <div class="form-image-container">
+      <img src="/servicii-page/administrare.jpg" alt="Contact image" />
+    </div>
+    <div class="form-container">
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Nume și prenume</label>
+          <input id="name" type="text" formControlName="name" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" formControlName="email" />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Telefon</label>
+          <input id="phone" type="tel" formControlName="phone" />
+        </div>
+
+        <div class="form-group">
+          <label for="service">Serviciul dorit</label>
+          <select id="service" formControlName="service">
+            <option value="">Selectează un serviciu</option>
+            <option value="curatenie">Curățenie</option>
+            <option value="spatii-verzi">Spații verzi</option>
+            <option value="reparatii-renovari">Reparații și renovări</option>
+            <option value="administrare-proprietati">Administrare proprietăți</option>
+            <option value="servicii-ddd">Servicii DDD</option>
+            <option value="servicii-suport">Servicii suport</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Mesajul tău</label>
+          <textarea id="message" rows="5" formControlName="message"></textarea>
+        </div>
+
+        <div class="form-group checkbox">
+          <input id="terms" type="checkbox" formControlName="terms" />
+          <label for="terms">
+            Accept <a href="/termeni" target="_blank">termenii și condițiile</a>
+          </label>
+        </div>
+
+        <button type="submit" [disabled]="!contactForm.valid">Trimite</button>
+          </form>
+    </div>
+  </div>
+  
+</section>
+

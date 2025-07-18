@@ -1,13 +1,10 @@
-/* HERO */
 .servici-hero {
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0.5)
-      ), url('/bg-idea.jpg') center/cover no-repeat;
-    position: relative;
-    color: white;
-    text-align: center;
-    padding: 6rem 2rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('/bg-idea.jpg') center/cover no-repeat;
+  position: relative;
+  color: white;
+  text-align: center;
+  padding: 6rem 2rem 10rem;
 
   .hero-content {
     position: relative;
@@ -25,10 +22,206 @@
         color: #6ebc5c;
       }
     }
+
     p {
       margin-top: 1rem;
       font-size: 1.2rem;
       opacity: 0.9;
     }
+  }
+}
+
+.contact-cards {
+  position: relative;
+  margin-top: -5rem;
+
+  .inner {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 2rem;
+    z-index: 3;
+    position: relative;
+  }
+
+  .contact-card {
+    background: white;
+    color: #0d0c22;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    text-align: center;
+    flex: 1 1 300px;
+    max-width: 350px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    i {
+      font-size: 2.5rem;
+      color: #6ebc5c;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      word-break: break-word;
+    }
+
+    p {
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    &:hover {
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+
+      i {
+        transform: scale(1.2);
+        color: #67cf5b;
+        text-shadow: 0 0 8px rgba(110, 188, 92, 0.4);
+      }
+    }
+  }
+}
+
+.contact-form-section {
+  background: #f8f8f8;
+  padding: 4rem 2rem;
+
+  .inner {
+    max-width: 72rem; // ~1152px (same as contact cards area)
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  .form-image-container {
+    flex: 0 0 40%; // fixed image width
+    display: flex;
+    align-items: stretch;
+
+    img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 4; // keeps image in control
+      object-fit: cover;
+      border-radius: 1rem;
+      box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .form-container {
+    flex: 1;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+
+    input,
+    select,
+    textarea {
+      padding: 0.75rem 1rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      transition: border 0.3s;
+
+      &:focus {
+        border-color: #6ebc5c;
+        outline: none;
+      }
+    }
+  }
+
+  .checkbox {
+    flex-direction: row;
+    align-items: center;
+
+    input {
+      margin-right: 0.5rem;
+      width: 1rem;
+      height: 1rem;
+    }
+
+    label {
+      margin: 0;
+      font-size: 0.95rem;
+
+      a {
+        color: #6ebc5c;
+        text-decoration: underline;
+
+        &:hover {
+          color: #4ca840;
+        }
+      }
+    }
+  }
+
+  button {
+    background-color: #6ebc5c;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:disabled {
+      background-color: #c9eac0;
+      cursor: not-allowed;
+    }
+
+    &:not(:disabled):hover {
+      background-color: #5aa750;
+    }
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .contact-form-section .inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-form-section .form-container,
+  .contact-form-section .form-image-container {
+    max-width: 100%;
+  }
+
+  .contact-form-section .form-image-container img {
+    aspect-ratio: unset;
+    max-height: 300px;
   }
 }
