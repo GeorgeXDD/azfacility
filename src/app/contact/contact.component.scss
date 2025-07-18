@@ -91,6 +91,33 @@
 .contact-form-section {
   background: #f8f8f8;
   padding: 4rem 2rem;
+  position: relative; // <== required to contain the absolute background
+
+  .background-decor {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+
+    .slanted-bar {
+      position: absolute;
+      width: 150%;
+      height: 300px;
+      background: linear-gradient(
+        90deg,
+        rgba(110, 188, 92, 0.2),
+        rgba(110, 188, 92, 0.1)
+      );
+      transform: rotate(-8deg);
+      top: 200px;
+      left: -25%;
+      z-index: -1;
+    }
+  }
+
 
   .inner {
     max-width: 72rem; // ~1152px (same as contact cards area)
@@ -100,6 +127,8 @@
     align-items: stretch;
     justify-content: space-between;
     flex-wrap: nowrap;
+    position: relative; // Needed to elevate above absolute backgrounds
+    z-index: 1;
   }
 
   .form-image-container {
