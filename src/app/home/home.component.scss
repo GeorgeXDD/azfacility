@@ -79,25 +79,25 @@
       animation-delay: 1s;
     }
 
-    .text-bg {
-      background: #6ebc5c;
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 100%;
-      transform-origin: left;
-      transform: scaleX(0);
-      animation: bg-swipe 1.2s ease forwards;
-    }
+    // .text-bg {
+    //   background: #6ebc5c;
+    //   position: absolute;
+    //   left: 0;
+    //   top: 0;
+    //   height: 100%;
+    //   width: 100%;
+    //   transform-origin: left;
+    //   transform: scaleX(0);
+    //   animation: bg-swipe 1.2s ease forwards;
+    // }
 
-    .text-line:nth-child(1) .text-bg {
-      animation-delay: 0s;
-    }
+    // .text-line:nth-child(1) .text-bg {
+    //   animation-delay: 0s;
+    // }
 
-    .text-line:nth-child(2) .text-bg {
-      animation-delay: 0.6s;
-    }
+    // .text-line:nth-child(2) .text-bg {
+    //   animation-delay: 0.6s;
+    // }
   }
 
   @keyframes bg-swipe {
