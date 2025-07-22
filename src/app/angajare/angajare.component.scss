@@ -40,8 +40,16 @@
   text-align: center;
 
   .join-us-content {
-    max-width: 1000px;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 95vw;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: 1400px) {
+    max-width: 1300px;
+  }
 
     h1 {
       color: var(--e-global-color-secondary);
@@ -71,7 +79,7 @@
         max-width: 550px;
 
         h3 {
-          color: var(--e-global-color-secondary);
+          color: var(--e-global-color-text);
           margin-bottom: 1rem;
           font-weight: 700;
         }
@@ -84,6 +92,7 @@
             margin-bottom: 0.5rem;
             padding-left: 1.5rem;
             position: relative;
+            color: var(--e-global-color-text);
 
             &::before {
               content: '✔';
@@ -109,7 +118,12 @@
 
 // Background decor for careers section
 .cta-final {
-  background: var(--e-global-color-primary);
+    background-color: var(--e-global-color-primary);
+  background-image: linear-gradient(
+    180deg,
+    var(--e-global-color-secondary) 0%,
+    var(--e-global-color-primary)      100%
+  );
   color: var(--e-global-color-white);
   .section-title::after { background: var(--e-global-color-white); }
   button[mat-button] {
