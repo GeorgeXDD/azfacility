@@ -130,15 +130,27 @@
   .services-wrapper {
     position: relative;
     width: 100%;
-    max-width: 1200px;
-    margin-top: 5rem;
+    max-width: 1440px;
+    margin-top: 4rem;
+    z-index: 2;
 
     .services-intro {
-      font-family: 'Roboto', sans‑serif;
+      font-family: 'Roboto';
       font-weight: 700;
-      font-size: 2rem;
-      color: var(--e-global-color-white);
+      font-size: 1.75rem;
+      color: var(--e-global-color-white) !important;
       text-align: left;
+      align-items: left;
+      margin-left: 7rem;
+      &::after {
+        content: '';
+        display: block;
+        width: 9em;
+        height: 0.1em;
+        background: var(--e-global-color-secondary);
+        margin: 0.5rem auto 0;
+        margin-left: 7rem;
+      }
     }
   }
 
@@ -150,8 +162,9 @@
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 1.5rem;
     width: 90%;
-    max-width: 1200px;
+    max-width: 1440px;
     margin-top: 1rem;
+    margin-left: 5rem;
   }
 
   .service-card {
