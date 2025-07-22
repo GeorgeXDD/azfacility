@@ -23,7 +23,7 @@
       letter-spacing: -0.5px;
 
       .accent-dot {
-        color: #6ebc5c;
+        color: #32bdbb;
       }
     }
 
@@ -45,20 +45,6 @@
   }
 }
 
-/* wave divider */
-.wave-divider {
-  width: 100%;
-  line-height: 0;
-  svg {
-    display: block;
-    width: 100%;
-    height: 100px;
-  }
-  &.flip svg {
-    transform: rotate(180deg);
-  }
-}
-
 .section-title {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
@@ -74,7 +60,7 @@
     display: block;
     width: 9em;
     height: 0.15em;
-    background: #6ebc5c;
+    background: #32bdbb;
     margin: 0.5rem auto 0;
   }
 }
@@ -94,7 +80,7 @@
 
 
     i {
-      color: #6ebc5c;
+      color: #32bdbb;
       font-size: 1.3rem;
       margin: 0;        
       justify-self: start;
@@ -178,7 +164,7 @@
             display: block;
             width: 40px;
             height: 4px;
-            background: #6ebc5c;
+            background: #32bdbb;
             margin-top: 0.5rem;
           }
         }
@@ -235,7 +221,7 @@
           display: block;
           width: 60px;
           height: 4px;
-          background: #6ebc5c;
+          background: #32bdbb;
           margin-top: 0.5rem;
         }
       }
@@ -261,7 +247,7 @@
           line-height: 1.6;
 
           .check-icon {
-            color: #6ebc5c;
+            color: #32bdbb;
             margin-right: 0.75rem;
             margin-top: 0.2rem;
             font-size: 1.2rem;

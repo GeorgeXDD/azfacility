@@ -49,18 +49,18 @@
 
     i {
       margin-right: 0.5rem;
-      color: #6ebc5c;
+      color: var(--e-global-color-secondary);
       font-size: 1rem;
       transition: transform 0.3s ease, color 0.3s ease;
     }
 
     &:hover {
-      color: #ffffff;
+      color: var(--e-global-color-white);
 
       i {
         transform: scale(1.2);
-        color: #8dfc80;
-        text-shadow: 0 0 6px rgba(110, 188, 92, 0.4);
+        color: var(--e-global-color-accent);
+        text-shadow: 0 0 6px rgba(92, 185, 188, 0.4);
       }
     }
   }
@@ -81,7 +81,7 @@
     right: 0;              
     width: 28%;            
     height: 5px;
-    background-color: #11ff0472;
+    background-color: var(--e-global-color-secondary);
     margin-right: 11rem;  
   }
 }
@@ -107,7 +107,7 @@
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 5rem;
-    color: #fff !important;
+    color: var(--e-global-color-white) !important;
     margin-right: 2rem;
     padding-left: 15rem; 
     margin-right: 5em;
@@ -141,7 +141,7 @@
 .nav-center button {
   position: relative;
   padding-bottom: 0.5rem;
-  color: white;
+  color: var(--e-global-color-white);
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
   font-size: 1.3rem;
@@ -153,8 +153,8 @@
 
   // Subtle text glow on hover
   &:hover {
-    color: #6ebc5c;
-    text-shadow: 0 0 5px rgba(110, 188, 92, 0.6);
+    color: var(--e-global-color-secondary);
+    text-shadow: 0 0 5px rgba(92, 186, 188, 0.6);
     transform: scale(1.05);
   }
 
@@ -167,7 +167,7 @@
     transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background: #6ebc5c;
+    background: var(--e-global-color-secondary);
     border-radius: 1px;
     transition: width 0.3s ease;
   }
@@ -178,8 +178,8 @@
 }
 
 .nav-center button.active {
-  color: #ffffff;
-  text-shadow: 0 0 5px rgba(110, 188, 92, 0.8);
+  color: var(--e-global-color-white);
+  text-shadow: 0 0 5px rgba(92, 188, 186, 0.8);
 
   &::after {
     width: 50px;
@@ -188,13 +188,13 @@
 
 /* Mobile drawer */
 .mobile-sidenav {
-  width: 240px; background: #222; color: #fff; padding-top: 32px;
+  width: 240px; background: #222; color: var(--e-global-color-white); padding-top: 32px;
   .mobile-nav {
     display: flex; flex-direction: column;
     button {
       justify-content: flex-start;
       padding: 1rem;
-      color: #fff;
+      color: var(--e-global-color-white);
       font-size: 1rem;
       &:hover { background: rgba(55, 185, 255, 0.1); }
     }
@@ -211,13 +211,13 @@
 .navbar-fixes {
   margin-left: 10rem;
     button{
-        color: white;
+        color: var(--e-global-color-white);
         font-family: 'Roboto', sans-serif;
         font-weight: 600;
         font-size: 1.3rem;
     }
     button[mat-button] {
-    border-color: #6ebc5c;
+    border-color: var(--e-global-color-secondary);
 
     &:hover {
         color: none;
@@ -225,12 +225,12 @@
     }
   }
 }
-.accent-dot { color:#6ebc5c; }
+.accent-dot { color:var(--e-global-color-secondary); }
 
 /* Footer */
 .footer {
   background: #FAFAFA;
-  color: #000000;
+  color: var(--e-global-color-black);
   padding: 3rem 0 1.5rem;
 
   .container {
@@ -272,7 +272,7 @@
 
           i {
             margin-right: 0.5rem;
-            color: #6ebc5c;
+            color: var(--e-global-color-secondary);
           }
 
           a {
@@ -281,7 +281,7 @@
             transition: color 0.2s;
 
             &:hover {
-              color: #6ebc5c;
+              color: var(--e-global-color-secondary);
             }
           }
         }

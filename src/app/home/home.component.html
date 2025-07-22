@@ -23,34 +23,22 @@
         </span>
       </p>
     </div>
-    <!-- <p>Intervenții rapide cu profesionalism constant</p> -->
   </div>
-
-  <div class="services">
-    <div class="service-card" *ngFor="let svc of services">
-      <i [class]="svc.icon"></i>
-      <h5>{{ svc.title }}</h5>
+  <div class="services-wrapper">
+    <h2>Un singur contract, mai multe facilități!</h2>
+    <div class="services">
+      <div class="service-card" *ngFor="let svc of services">
+        <i [class]="svc.icon"></i>
+        <h5>{{ svc.title }}</h5>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- home.component.html -->
 <section class="why-az">
-  <!-- Top wave SVG -->
-<!-- <div class="wave wave--top">
-  <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-    <path
-      d="M0,100 
-         C360,0  720,100 1440,0
-         L1440,100 
-         L0,100 Z"
-    fill="#e9ecef"
-    />
-  </svg>
-</div> -->
 
   <div class="container">
-    <h2 class="section-title" data-aos="zoom-in">De ce AZ Facility?</h2>
+    <h2 class="section-title" data-aos="zoom-in" style="font-weight: 900;">De ce AZ Facility?</h2>
     <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
       4 motive pentru a lucra cu noi
     </p>
@@ -78,21 +66,27 @@
   </div>
 
   <!-- Bottom wave SVG -->
-  <div class="wave wave--bottom">
-    <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-      <path
-        d="M0,80 C360,0 720,100 1080,40 L1440,0 L1440,100 L0,100 Z"
-        fill="#e9ecef"
-      />
-    </svg>
-  </div>
+<div class="wave wave--bottom">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path
+      d="M720,60 
+         L0,10 
+         V0 
+         H1440 
+         V10 
+         L720,60 
+         Z"
+      fill="#ffffff"
+    />
+  </svg>
+</div>
 </section>
 
 
 <!-- 3) Servicii principale -->
 <section class="main-services-alt py-7" style="margin-top: 1rem">
   <div class="wrapper">
-    <h2 class="section-title text-center mb-4">
+    <h2 class="section-title text-center mb-4" style="margin-top: 1em">
       Servicii de Administrare a Proprietății
     </h2>
 
@@ -121,12 +115,20 @@
       </button>
     </div>
   </div>
+  <div class="wave wave--top">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+      <path
+        d="M720,60 L0,10 V0 H1440 V10 L720,60 Z"
+        fill="#ffffff"
+      />
+    </svg>
+  </div>
 </section>
 
 <!-- 4) Cum te ajutăm? -->
 <section class="about-details py-5 help-container">
   <div class="container">
-    <h2 class="section-title text-center mb-4" data-aos="zoom-in">
+    <h2 class="section-title text-center mb-4" data-aos="zoom-in" style="color: var(--e-global-color-text);">
       Cum te ajutăm să economisești și să te bucuri de liniște?
     </h2>
 
@@ -153,9 +155,9 @@
       ></div>
     </div>
 
-    <h2 class="section-title text-center mb-4" data-aos="zoom-in">
+    <!-- <h2 class="section-title text-center mb-4" data-aos="zoom-in">
       Un singur contract, un pachet complex de facilități!
-    </h2>
+    </h2> -->
   </div>
 </section>
 

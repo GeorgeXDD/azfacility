@@ -33,27 +33,27 @@ export class HomeComponent implements AfterViewInit {
   direction: 'next' | 'prev' = 'next';
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
-
- services = [
+  
+  services = [
     {
-      icon: 'fas fa-building',
-      title: 'Servicii de Administrare a Proprietății'
+      icon: 'far fa-building',
+      title: 'Clădiri de birouri & business center'
     },
     {
-      icon: 'fas fa-hammer',
-      title: 'Reparații și Renovări'
+      icon: 'fas fa-store',
+      title: 'Spații comerciale & mall-uri'
     },
     {
-      icon: 'fas fa-broom',
-      title: 'Servicii de Curățenie'
+      icon: 'far fa-hospital', 
+      title: 'Ansambluri rezidențiale & apartamente'
     },
     {
-      icon: 'fas fa-seedling',
-      title: 'Amenajarea și Întreținerea Spațiilor Verzi'
+      icon: 'fas fa-industry',
+      title: 'Spații industriale & logistice'
     },
-        {
+    {
       icon: 'fas fa-shield-halved',
-      title: 'Servicii suport'
+      title: 'Centre medicale & spații specializate'
     }
   ];
 

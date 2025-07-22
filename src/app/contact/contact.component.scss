@@ -2,7 +2,7 @@
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url('/hero-image.jpg') center/cover no-repeat;
   position: relative;
-  color: white;
+  color: var(--e-global-color-white);
   text-align: center;
   padding: 6rem 2rem 10rem;
 
@@ -19,7 +19,7 @@
       letter-spacing: -0.5px;
 
       .accent-dot {
-        color: #6ebc5c;
+        color: var(--e-global-color-secondary);
       }
     }
 
@@ -46,8 +46,8 @@
   }
 
   .contact-card {
-    background: white;
-    color: #0d0c22;
+    background: var(--e-global-color-white);
+    color: var(--e-global-color-text);
     border-radius: 1rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     padding: 2rem;
@@ -59,7 +59,7 @@
 
     i {
       font-size: 2.5rem;
-      color: #6ebc5c;
+      color: var(--e-global-color-secondary);
       margin-bottom: 1rem;
       transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
     }
@@ -81,17 +81,17 @@
 
       i {
         transform: scale(1.2);
-        color: #67cf5b;
-        text-shadow: 0 0 8px rgba(110, 188, 92, 0.4);
+        color: var(--e-global-color-secondary);
+        text-shadow: 0 0 8px rgba(92, 188, 177, 0.4);
       }
     }
   }
 }
 
 .contact-form-section {
-  background: #f8f8f8;
+  background: var(--e-global-color-white);
   padding: 4rem 2rem;
-  position: relative; // <== required to contain the absolute background
+  position: relative; 
 
   .background-decor {
     position: absolute;
@@ -108,8 +108,8 @@
       height: 300px;
       background: linear-gradient(
         90deg,
-        rgba(110, 188, 92, 0.2),
-        rgba(110, 188, 92, 0.1)
+        rgba(92, 188, 182, 0.2),
+        rgba(92, 185, 188, 0.1)
       );
       transform: rotate(-8deg);
       top: 200px;
@@ -148,7 +148,7 @@
 
   .form-container {
     flex: 1;
-    background: #fff;
+    background: var(--e-global-color-white);
     padding: 2rem;
     border-radius: 1rem;
     box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.08);
@@ -170,7 +170,7 @@
     label {
       font-weight: 500;
       margin-bottom: 0.5rem;
-      color: #333;
+      color: var(--e-global-color-text);
     }
 
     input,
@@ -183,7 +183,7 @@
       transition: border 0.3s;
 
       &:focus {
-        border-color: #6ebc5c;
+        border-color: var(--e-global-color-secondary);
         outline: none;
       }
     }
@@ -204,19 +204,19 @@
       font-size: 0.95rem;
 
       a {
-        color: #6ebc5c;
+        color: var(--e-global-color-secondary);
         text-decoration: underline;
 
         &:hover {
-          color: #4ca840;
+          color: var(--e-global-color-secondary);
         }
       }
     }
   }
 
   button {
-    background-color: #6ebc5c;
-    color: #fff;
+    background-color: var(--e-global-color-secondary);
+    color: var(--e-global-color-white);
     padding: 0.8rem 2rem;
     border: none;
     border-radius: 0.5rem;
@@ -226,12 +226,12 @@
     transition: background 0.3s;
 
     &:disabled {
-      background-color: #c9eac0;
+      background-color: #c0eaea;
       cursor: not-allowed;
     }
 
     &:not(:disabled):hover {
-      background-color: #5aa750;
+      background-color: var(--e-global-color-secondary)b;
     }
   }
 }
