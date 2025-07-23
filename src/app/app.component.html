@@ -2,162 +2,83 @@
   <!-- Mobile drawer -->
   <mat-sidenav #drawer class="mobile-sidenav" mode="over" opened="false">
     <nav class="mobile-nav">
-      <button
-        mat-button
-        routerLink="/"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        (click)="drawer.close()"
-      >
+      <button mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="drawer.close()">
         Acasă
       </button>
-      <button
-        mat-button
-        routerLink="/despre-noi"
-        routerLinkActive="active"
-        (click)="drawer.close()"
-      >
+      <button mat-button routerLink="/despre-noi" routerLinkActive="active" (click)="drawer.close()">
         Despre noi
       </button>
-      <button
-        mat-button
-        routerLink="/servicii"
-        routerLinkActive="active"
-        (click)="drawer.close()"
-      >
+      <button mat-button routerLink="/servicii" routerLinkActive="active" (click)="drawer.close()">
         Servicii
       </button>
-
-      <button
-        mat-button
-        routerLink="/angajare"
-        routerLinkActive="active"
-        (click)="drawer.close()"
-      >
+      <button mat-button routerLink="/angajare" routerLinkActive="active" (click)="drawer.close()">
         Angajare
       </button>
-      <button
-        mat-button
-        routerLink="/contact"
-        routerLinkActive="active"
-        (click)="drawer.close()"
-      >
+      <button mat-button routerLink="/contact" routerLinkActive="active" (click)="drawer.close()">
         Contact
       </button>
     </nav>
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <!-- Top info bar (desktop only) -->
-    <div class="top-bar d-none d-md-flex">
-      <div class="inner">
+    <!-- 1) Sticky Top Info Bar (desktop only) -->
+    <nav class="sticky-top-bar d-none d-md-flex">
+      <div class="sticky-inner">
         <a class="info-item" href="mailto:contact@gp.com">
-          <i class="fa-solid fa-envelope"></i>
-          contact&#64;gp.com
+          <i class="fa-solid fa-envelope"></i> contact&#64;gp.com
         </a>
         <a class="info-item" href="tel:+40123456789">
-          <i class="fa-solid fa-phone"></i>
-          +40 123 456 789
+          <i class="fa-solid fa-phone"></i> +40 123 456 789
         </a>
         <a class="info-item" href="tel:+40123456789">
-          <i class="fa-solid fa-phone"></i>
-          +40 123 456 789
+          <i class="fa-solid fa-phone"></i> +40 123 456 789
         </a>
       </div>
-    </div>
+    </nav>
 
-    <div class="navbar-separator d-none d-md-block"></div>
+    <!-- 2) Sticky Navbar -->
+    <nav class="sticky-nav">
+      <div class="sticky-nav-inner">
+        <!-- mobile toggle button -->
+        <button mat-icon-button class="sticky-nav-menu-btn d-lg-none" (click)="drawer.toggle()">
+          <i class="fa-solid fa-bars"></i>
+        </button>
 
-    <!-- Toolbar -->
-    <mat-toolbar class="navbar">
-      <button
-        mat-icon-button
-        class="mobile-menu-btn d-lg-none"
-        (click)="drawer.toggle()"
-      >
-        <i style="color: white" class="fa-solid fa-bars"></i>
-      </button>
-      <a class="navbar-brand">
-        <div class="brand-main">AZ<span class="accent-dot">.</span></div>
-        <div class="brand-tagline">Your Space, Our Care</div>
-      </a>
+        <!-- brand -->
+        <a routerLink="/" class="sticky-nav-brand">
+          <div class="sticky-brand-main">AZ<span class="sticky-accent-dot">.</span></div>
+          <div class="sticky-brand-tagline">Your Space, Our Care</div>
+        </a>
 
-      <!-- desktop nav -->
-      <div class="nav-center d-none d-lg-flex navbar-fixes">
-        <button
-          mat-button
-          routerLink="/"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-        >
-          Acasă
-        </button>
-        <button mat-button routerLink="/despre-noi" routerLinkActive="active">
-          Despre noi
-        </button>
-        <!-- Servicii dropdown -->
-        <button
-          mat-button
-          [matMenuTriggerFor]="serviciiMenu"
-          [class.active]="isServiciiActive()"
-        >
-          Servicii
-        </button>
-        <mat-menu #serviciiMenu="matMenu">
-          <button
-            mat-menu-item
-            [routerLink]="['/servicii']"
-            fragment="curatenie"
-          >
-            Curățenie
+        <!-- desktop links + dropdown (hidden on mobile) -->
+        <div class="sticky-nav-center d-none d-lg-flex">
+          <button mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+            Acasă
           </button>
-          <button
-            mat-menu-item
-            [routerLink]="['/servicii']"
-            fragment="spatii-verzi"
-          >
-            Spații verzi
+          <button mat-button routerLink="/despre-noi" routerLinkActive="active">
+            Despre noi
           </button>
-          <button
-            mat-menu-item
-            [routerLink]="['/servicii']"
-            fragment="renovari"
-          >
-            Reparații și renovări
-          </button>
-          <button 
-            mat-menu-item 
-            [routerLink]="['/servicii']" 
-            fragment="administrare"
-          >
-            Administrare proprietăți
-          </button>
-          <button 
-            mat-menu-item 
-            [routerLink]="['/servicii']" 
-            fragment="ddd"
-          >
-            Servicii DDD
-          </button>
-          <button 
-            mat-menu-item 
-            [routerLink]="['/servicii']" 
-            fragment="suport"
-          >
-            Servicii suport
-          </button>
-        </mat-menu>
 
-        <button mat-button routerLink="/angajare" routerLinkActive="active">
-          Cariere
-        </button>
-        <button mat-button routerLink="/contact" routerLinkActive="active">
-          Contact
-        </button>
+          <!-- Servicii dropdown -->
+          <button mat-button [matMenuTriggerFor]="stickyServiciiMenu" routerLinkActive="active">
+            Servicii
+          </button>
+          <mat-menu #stickyServiciiMenu="matMenu">
+            <button mat-menu-item [routerLink]="['/servicii']" fragment="curatenie">Curățenie</button>
+            <button mat-menu-item [routerLink]="['/servicii']" fragment="spatii-verzi">Spații verzi</button>
+            <button mat-menu-item [routerLink]="['/servicii']" fragment="renovari">Reparații și renovări</button>
+            <button mat-menu-item [routerLink]="['/servicii']" fragment="administrare">Administrare proprietăți</button>
+            <button mat-menu-item [routerLink]="['/servicii']" fragment="ddd">Servicii DDD</button>
+            <button mat-menu-item [routerLink]="['/servicii']" fragment="suport">Servicii suport</button>
+          </mat-menu>
+
+          <button mat-button routerLink="/angajare" routerLinkActive="active">Cariere</button>
+          <button mat-button routerLink="/contact" routerLinkActive="active">Contact</button>
+        </div>
+
+        <span class="sticky-flex-spacer"></span>
       </div>
-
-      <span class="flex-spacer"></span>
-    </mat-toolbar>
+    </nav>
 
     <router-outlet></router-outlet>
 

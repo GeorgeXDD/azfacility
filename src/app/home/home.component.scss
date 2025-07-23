@@ -194,13 +194,24 @@
 }
 
 /* Mobile tweaks */
-@media (max-width: 600px) {
+@media (max-width: 991px) {
   .hero{
     padding-bottom: 2rem;
   }
   .hero-content h1 span { font-size: 5rem; }
   .hero-content p  { font-size: 2rem; }
-  .services { gap: 1rem; }
+  .services-wrapper {
+    .services{
+      margin-left: 1.25rem !important;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+    .services-intro {
+      margin-left: 1.25rem !important;
+      &::after {
+        margin-left: 0 !important;
+      }
+    }
+  }
 }
 
 .main-services-alt  .section-title,
@@ -458,6 +469,14 @@
     }
 }
 
+@media (max-width: 991px) {
+  .main-services-alt {
+    .wave--top {
+      top: 35rem;
+    }
+  }
+}
+
 /* 4) Cum te ajutăm */
 .about-details {
   background-color: var(--e-global-color-white);
@@ -529,11 +548,11 @@
     width: 150%;
     height: 360px;
     background-color: var(--e-global-color-primary);
-    background-image: linear-gradient(
-      180deg,
-      var(--e-global-color-secondary) 0%,
-      var(--e-global-color-primary)      100%
-    );
+    // background-image: linear-gradient(
+    //   180deg,
+    //   var(--e-global-color-secondary) 0%,
+    //   var(--e-global-color-primary)      100%
+    // );
     transform: rotate(-5deg);
     transform-origin: center;
     z-index: 0;
