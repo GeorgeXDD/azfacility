@@ -582,137 +582,64 @@
 
 /* 5) Tipuri de proprietăți */
 .property-types {
-  background: var(--e-global-color-secondary);
-  padding: 4rem 0;
-  color: var(--e-global-color-white);
-
-  .prop-layout {
+  .prop-split {
+    position: relative;
     display: flex;
-    align-items: flex-start;
-    // gap: 2rem;
-    margin-top: 2rem;
-
-    // left column (title + grid)
-    .prop-left {
-      margin-left: 3em;
-      flex: 0 0 60%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      .section-title {
-        text-align: center;
-        justify-content: center;
-        margin-bottom: 1.5rem;
-        color: var(--e-global-color-white);
-        &::after { background: var(--e-global-color-white); }
-      }
-
-      .prop-grid {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
-      }
-    }
-
-    // right column (call-out)
-    .prop-callout {
-      margin-top: 8rem;
-      margin-right: 13em;
-      flex: 0 0 35%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      p {
-        font-size: 5rem;         
-        font-weight: 700;
-        line-height: 1.2;
-        text-align: center;
-        margin: 0;
-        color: var(--e-global-color-white);
-      }
-    }
-  }
-
-  .prop-card {
-    padding: 0;
+    width: 100%;
+    height: 400px;           // adjust height as you like
+    background: #fff;
     overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.4s ease;
-    &:hover { transform: scale(1.05); }
-
-    .prop-image {
-      position: relative;
-      width: 100%;
-      height: 250px;
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      .overlay {
-        position: absolute;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.5);
-        transition: opacity 0.4s ease;
-        z-index: 1;
-      }
-
-      .card-text {
-        position: relative;
-        color: var(--e-global-color-white);
-        font-size: 1.6rem;
-        font-weight: 700;
-        z-index: 2;
-        text-align: center;
-        padding: 1rem;
-      }
-    }
-
-    &:hover {
-      .overlay {
-        opacity: 0;
-      }
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-
-    }
   }
 
-  .prop-card::after {
-    content: "";
+  .prop-left-panel {
     position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 30%, rgba(68, 121, 117, 0.522));
-    transition: opacity 0.3s;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 60%;  height: 100%;
+      object-fit: cover;
+    }
   }
 
-  // responsive: stack under each other on narrow screens
-  @media (max-width: 768px) {
-    .prop-grid {
-      margin-left: -10% !important;
-      width: 90% !important;
-      grid-template-columns: repeat(1, 1fr) !important;  // single column
-    } 
+  .prop-triangle {
+    z-index: 1;
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 30%;           
+    width: 70%;
+    margin-bottom: -0.2rem;          
 
-    .prop-layout {
-      flex-direction: column;
+    background: var(--e-global-color-secondary);
+    clip-path: polygon(
+      40%   0%,      /* top‑left of the wedge  */
+      100% 0%,      /* top‑right (full width) */
+      100% 100%,    /* bottom right */
+      20%  100%     /* bottom 20% in from left */
+    );
 
-      .prop-left,
-      .prop-callout {
-        flex: 0 0 100%;
-      }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
 
-      .prop-callout {
-        margin-left: 7rem;
-        margin-top: 2rem;
-        p {
-          font-size: 3rem;
-        }
-      }
+    p {
+      margin-left: 25rem !important;
+      color: #fff;
+      font-size: 5rem;       // bigger text
+      font-weight: 900;
+      text-align: center;
+      line-height: 1.5;
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .prop-split {
+      display: none;
     }
   }
 }

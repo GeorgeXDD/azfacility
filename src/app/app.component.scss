@@ -443,7 +443,7 @@
 @media (max-width: 991px) {
   .sticky-nav-brand { display: none;}
   .sticky-nav-center { display: none; }
-  .sticky-top-bar { display: none; }
+  .sticky-top-bar { display: none !important }
   .sticky-nav{
     top: 0;
   }

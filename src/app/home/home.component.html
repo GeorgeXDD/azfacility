@@ -162,31 +162,18 @@
 </section>
 
 <!-- 5) Tipuri de proprietăți -->
-<section class="property-types py-5">
-  <div class="wrapper">
-    <div class="prop-layout">
-      <!-- LEFT: title + 2×2 grid -->
-      <div class="prop-left">
-        <h2 class="section-title" data-aos="zoom-in">
-          Ce tipuri de proprietăți administrăm?
-        </h2>
-        <div class="prop-grid">
-          <mat-card class="prop-card" *ngFor="let p of propertyTypes">
-            <div class="prop-image" [ngStyle]="{ 'background-image': 'url(' + p.img + ')' }">
-              <div class="overlay"></div>
-              <div class="card-text">
-                <p>{{ p.title }}</p>
-              </div>
-            </div>
-          </mat-card>
-        </div>
-      </div>
-
-      <!-- RIGHT: lone call-out -->
-      <div class="prop-callout">
-        <p>We can’t manage<br>what we can’t measure!</p>
-      </div>
+<section class="property-types">
+  <div class="prop-split">
+    <!-- LEFT IMAGE -->
+    <div class="prop-left-panel">
+      <img src="/home-page/aparatura-curatenie.jpg" alt="Left image" />
     </div>
+
+    <!-- CENTER TRIANGLE + TEXT -->
+    <div class="prop-triangle">
+      <p>We can’t manage<br/>what we can’t measure!</p>
+    </div>
+
   </div>
 </section>
 
